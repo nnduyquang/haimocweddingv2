@@ -1,0 +1,21 @@
+#footer {
+  .wrap-footer {
+    background-color: #fafafa;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+    padding-top: 20px;
+    h3 {
+      padding-bottom: 20px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #ff6d00;
+      text-transform: uppercase;
+    }
+    h4.footer-title {
+      color: black;
+      font-family: helveticaneuelight;
+      font-weight: 800;
+    }
+    .footer-info {
+      line-height: 1.6;
+    }
+  }
+}

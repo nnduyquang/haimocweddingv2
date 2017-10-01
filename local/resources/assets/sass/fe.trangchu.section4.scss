@@ -1,0 +1,65 @@
+#section4 {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  .s4-info {
+    text-align: center;
+    h3 {
+      font-size: 35px;
+      margin-bottom: 5px;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    a {
+      padding: 10px 20px 10px 20px;
+      border: 1px solid $main-a-hover;
+      color: $main-a-hover;
+      text-transform: uppercase;
+      font-weight: bolder;
+    }
+    a:hover {
+      background-color: $main-a-hover;
+      color: white;
+    }
+  }
+  .s4-baloon {
+    ul.s4-baloon-wrap {
+      position: relative;
+      li {
+        position: absolute;
+        border-radius: 5px;
+        padding: 25px 25px 60px 25px;
+        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+        background: linear-gradient(45deg, #DCDCDC, #FFFFFF, #DEDEDE);
+        animation: balloons 4s ease-in-out infinite;
+        img{
+          width: 300px;
+        }
+      }
+      @keyframes balloons {
+        0%,100%{ transform:translateY(0); }
+        50%{ transform:translateY(-25px); }
+      }
+      li:first-child {
+        left: -19px;
+        bottom: -190px;
+      }
+      li:nth-child(2) {
+        right: 79px;
+        bottom: -317px;
+        animation-delay: 1s;
+
+      }
+      li:last-child {
+        right: -29px;
+        bottom: -112px;
+        animation-delay: 2s;
+      }
+    }
+  }
+}
+

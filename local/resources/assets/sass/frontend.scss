@@ -1,8 +1,11 @@
-$main-bg-color:  linear-gradient(#f4e184, #c9ab56);
-$main-title-color: #daa43b;
+$main-a-hover:#00999f;
 @import "reset";
 @import "m-category";
 @import "m-menu-blur";
 @import "fe.phoneanimation";
 @import "fe.menu";
 @import "fe.footer";
+@import "fe.trangchu";
+body{
+  background-color: white;
+}

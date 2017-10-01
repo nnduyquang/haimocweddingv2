@@ -9,5 +9,8 @@
    @include('frontend.slider.slider')
 @stop
 @section('container')
-   Hello
+   @include('frontend.trangchu.section1')
+   @include('frontend.trangchu.section4')
+   @include('frontend.trangchu.section2')
+   @include('frontend.trangchu.section3')
 @stop

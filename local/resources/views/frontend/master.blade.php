@@ -23,19 +23,24 @@
 </header>
 <div id="blurrMe">
     @include('frontend.menu.m-menu')
-
+    @include('frontend.menu.menu')
     @yield('slider')
 
-    @include('frontend.menu.menu')
 
-    {{--<div id="wrap-container">--}}
-    @yield('container')
-    {{--</div>--}}
+    <div id="wrap-container" class="col-md-12">
+        <div class="row">
+            <div class="container main-wrap">
+                <div class="row">
+                    @yield('container')
+
+                </div>
+            </div>
+            @include('frontend.footer.index')
+        </div>
+    </div>
 </div>
 @include('frontend.menu.m-sidebar')
-<div class="footer">
-    @include('frontend.footer.index')
-</div>
+
 {{ Html::script('js/core.common.js') }}
 {{ Html::script('js/core.frontend.js') }}
 <script type="text/javascript">
@@ -46,6 +51,14 @@
     });
 </script>
 @yield('scripts')
+<script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 {{ Html::script('js/scripts.js') }}
 <div class="callback hidden-lg hidden-md">
     <div class="phone_animation">
