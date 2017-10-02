@@ -1,0 +1,93 @@
+#album {
+  h3.title {
+    text-align: center;
+    position: relative;
+    font-size: 39px;
+    color: $main-a-hover;
+    padding-bottom: 60px;
+  }
+  h3.title:after {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    display: block;
+    width: 60px;
+    height: 1px;
+    margin-left: -30px;
+    background-color: #c8c8c8;
+    content: ' ';
+  }
+  #album-khuvuc {
+    background: $main-a-hover;
+    padding: 21px;
+    margin-bottom: 60px;
+    h3 {
+      color: white;
+    }
+    .one-dd {
+      margin-bottom: 20px;
+      a {
+        color: white;
+        font-size: 20px;
+      }
+    }
+  }
+  #list-album {
+    .one-item {
+      text-align: center;
+      padding-left: 30px;
+      padding-bottom: 30px;
+      a {
+        color: $main-a-hover;
+        img {
+          width: 100%;
+          position: relative;
+          z-index: 1;
+        }
+        .item-info {
+          background-color: white;
+          position: relative;
+          z-index: 1;
+          padding: 15px;
+          margin: -20px auto 0;
+          width: 80%;
+          p.title {
+            text-transform: uppercase;
+            font-size: 20px;
+          }
+          p.btn {
+            display: block;
+            border: 1px solid $main-a-hover;
+            text-transform: uppercase;
+            width: 50%;
+            margin: auto;
+            margin-top: 20px;
+            transition: all 0.2s ease-in-out;
+          }
+        }
+        .item-info:before {
+          display: block;
+          position: absolute;
+          top: 3px;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          box-shadow: 1px 6px 20px 0px rgba(0, 0, 0, 0.35);
+          content: ' ';
+          transform-style: preserve-3d;
+          backface-visibility: hidden;
+          transition-duration: 0.5s;
+          transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+      }
+      a:hover {
+        .item-info {
+          p.btn {
+            background-color: $main-a-hover;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

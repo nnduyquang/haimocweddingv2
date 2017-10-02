@@ -43,5 +43,18 @@ $(document).ready(function () {
             $('.menu-right-contact').removeClass('menu-right-contact-fixed');
         }
     });
+    var $grid = $('.grid-haha').masonry({
+        itemSelector: '.grid-item',
+        percentPosition: true,
+        columnWidth: '.grid-sizer'
+    });
+// layout Masonry after each image loads
+    $grid.imagesLoaded().progress( function() {
+        $grid.masonry();
+    });
+    $(".fancybox").fancybox();
+
+
+
 
 });

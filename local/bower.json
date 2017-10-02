@@ -20,6 +20,10 @@
     "AdminLTE": "admin-lte#^2.3.11",
     "ckeditor": "#full/latest",
     "bootstrap-toggle": "^2.2.2",
-    "nivo-slider": "*"
+    "nivo-slider": "*",
+    "photoswipe": "^4.1.2",
+    "fancybox": "^3.1.25",
+    "masonry": "masonry-layout#^4.2.0",
+    "imagesloaded": "^4.1.3"
   }
 }

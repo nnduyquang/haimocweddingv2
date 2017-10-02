@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('frontend.trangchu.index');
 });
+Route::get('/album', function () {
+    return view('frontend.album.index');
+});
+Route::get('/album/chi-tiet', function () {
+    return view('frontend.album.chitietalbum.index');
+});
+

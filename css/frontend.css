@@ -864,6 +864,164 @@ This class is added to the container
           animation-delay: 2s;
 }
 
+#album h3.title {
+  text-align: center;
+  position: relative;
+  font-size: 39px;
+  color: #00999f;
+  padding-bottom: 60px;
+}
+
+#album h3.title:after {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  display: block;
+  width: 60px;
+  height: 1px;
+  margin-left: -30px;
+  background-color: #c8c8c8;
+  content: ' ';
+}
+
+#album #album-khuvuc {
+  background: #00999f;
+  padding: 21px;
+  margin-bottom: 60px;
+}
+
+#album #album-khuvuc h3 {
+  color: white;
+}
+
+#album #album-khuvuc .one-dd {
+  margin-bottom: 20px;
+}
+
+#album #album-khuvuc .one-dd a {
+  color: white;
+  font-size: 20px;
+}
+
+#album #list-album .one-item {
+  text-align: center;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+
+#album #list-album .one-item a {
+  color: #00999f;
+}
+
+#album #list-album .one-item a img {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+#album #list-album .one-item a .item-info {
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  padding: 15px;
+  margin: -20px auto 0;
+  width: 80%;
+}
+
+#album #list-album .one-item a .item-info p.title {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+#album #list-album .one-item a .item-info p.btn {
+  display: block;
+  border: 1px solid #00999f;
+  text-transform: uppercase;
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#album #list-album .one-item a .item-info:before {
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 1px 6px 20px 0px rgba(0, 0, 0, 0.35);
+          box-shadow: 1px 6px 20px 0px rgba(0, 0, 0, 0.35);
+  content: ' ';
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+          transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#album #list-album .one-item a:hover .item-info p.btn {
+  background-color: #00999f;
+  color: white;
+}
+
+#chitiet-album {
+  /* clear fix */
+  /* ---- .grid-item ---- */
+}
+
+#chitiet-album img.img-top {
+  width: 100%;
+}
+
+#chitiet-album h3.title {
+  text-align: center;
+  position: relative;
+  font-size: 39px;
+  color: #00999f;
+  padding-bottom: 60px;
+}
+
+#chitiet-album h3.title:after {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  display: block;
+  width: 60px;
+  height: 1px;
+  margin-left: -30px;
+  background-color: #c8c8c8;
+  content: ' ';
+}
+
+#chitiet-album .grid {
+  background: #DDD;
+}
+
+#chitiet-album .grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#chitiet-album .grid-sizer,
+#chitiet-album .grid-item {
+  width: 33.333%;
+}
+
+#chitiet-album .grid-item {
+  float: left;
+}
+
+#chitiet-album .grid-item img {
+  display: block;
+  max-width: 100%;
+}
+
 body {
   background-color: white;
 }
