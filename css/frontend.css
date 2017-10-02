@@ -998,6 +998,24 @@ This class is added to the container
   content: ' ';
 }
 
+#chitiet-album #location {
+  background: #00999f;
+}
+
+#chitiet-album #location h3 {
+  color: white;
+}
+
+#chitiet-album #location ul {
+  padding: 28px 25px;
+}
+
+#chitiet-album #location ul li a {
+  color: white;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
 #chitiet-album .grid {
   background: #DDD;
 }
@@ -1020,6 +1038,77 @@ This class is added to the container
 #chitiet-album .grid-item img {
   display: block;
   max-width: 100%;
+}
+
+#chitiet-album .list-dd {
+  position: relative;
+}
+
+#chitiet-album .list-dd a.choose-dd {
+  display: block;
+  width: 100%;
+  background: #00999f;
+  color: white;
+  padding: 5px 5px;
+  line-height: 50px;
+  font-size: 17px;
+  margin-bottom: 10px;
+  text-align: center;
+  position: relative;
+}
+
+#chitiet-album .list-dd a.choose-dd i {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#chitiet-album .list-dd a.choose-dd i.fa-minus {
+  display: none;
+}
+
+#chitiet-album .list-dd ul.ul-dd {
+  position: absolute;
+  height: 0;
+  z-index: 999999;
+  background: #00999f;
+  width: 100%;
+  padding: 10% 6%;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#chitiet-album .list-dd ul.ul-dd li {
+  width: 50%;
+  float: left;
+  margin-bottom: 15px;
+}
+
+#chitiet-album .list-dd ul.ul-dd li a {
+  line-height: 1.3px;
+  color: white;
+}
+
+#chitiet-album .list-dd .open-dd {
+  height: 100px !important;
+  opacity: 0.8 !important;
+}
+
+@media screen and (max-width: 768px) {
+  #chitiet-album img.img-top {
+    margin-top: 26px;
+  }
+  #chitiet-album .grid-sizer,
+  #chitiet-album .grid-item {
+    width: 100%;
+  }
+  #chitiet-album .grid-sizer img,
+  #chitiet-album .grid-item img {
+    width: 100%;
+  }
 }
 
 body {

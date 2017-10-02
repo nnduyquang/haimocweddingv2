@@ -1,5 +1,5 @@
-#chitiet-album{
-  img.img-top{
+#chitiet-album {
+  img.img-top {
     width: 100%;
   }
   h3.title {
@@ -20,6 +20,23 @@
     background-color: #c8c8c8;
     content: ' ';
   }
+  #location {
+    background: $main-a-hover;
+    h3 {
+      color: white;
+    }
+    ul {
+      padding: 28px 25px;
+      li {
+        a {
+          color: white;
+          font-size: 20px;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+
   .grid {
     background: #DDD;
   }
@@ -45,5 +62,67 @@
   .grid-item img {
     display: block;
     max-width: 100%;
+  }
+  .list-dd {
+    position: relative;
+    a.choose-dd {
+      display: block;
+      width: 100%;
+      background: $main-a-hover;
+      color: white;
+      padding: 5px 5px;
+      line-height: 50px;
+      font-size: 17px;
+      margin-bottom: 10px;
+      text-align: center;
+      position: relative;
+      i {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      i.fa-minus {
+        display: none;
+      }
+    }
+    ul.ul-dd {
+      position: absolute;
+      height: 0;
+      z-index: 999999;
+      background: $main-a-hover;
+      width: 100%;
+      padding: 10% 6%;
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+      li {
+        width: 50%;
+        float: left;
+        margin-bottom: 15px;
+        a {
+          line-height: 1.3px;
+          color: white;
+        }
+      }
+    }
+    .open-dd{
+      height: 100px !important;
+      opacity: 0.8 !important;
+    }
+
+  }
+}
+@media screen and(max-width: 768px) {
+  #chitiet-album {
+    img.img-top {
+      margin-top: 26px
+    }
+    .grid-sizer,
+    .grid-item {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
   }
 }
