@@ -52,6 +52,7 @@ mix.styles([
     .styles([
         'resources/assets/js/ulti.js',
         'resources/assets/js/be.news.js',
+        'resources/assets/js/be.location.js',
     ], '../js/backend.js')
     .sass('resources/assets/sass/backend.scss', '../../css/backend.css').options({processCssUrls: false})
     .styles([

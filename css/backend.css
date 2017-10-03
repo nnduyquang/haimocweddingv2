@@ -15,3 +15,7 @@
 .wrap-search i {
   margin-right: 3px;
 }
+
+img.showHinh1, img.showHinh2, img.showHinh3, img.showDDCover, img.showDDAvata, img.showDDBackground {
+  width: 100%;
+}

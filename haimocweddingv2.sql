@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2017 at 11:59 AM
+-- Generation Time: Oct 03, 2017 at 05:51 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -35,7 +35,8 @@ CREATE TABLE `albums` (
   `order` int(11) NOT NULL DEFAULT '1',
   `user_id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `path` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -72,7 +73,8 @@ INSERT INTO `category_permissions` (`id`, `name`, `created_at`, `updated_at`) VA
 (1, 'Role', '2017-10-03 06:54:38', '2017-10-03 06:54:38'),
 (2, 'User', '2017-10-03 06:54:38', '2017-10-03 06:54:38'),
 (3, 'Tin Tức', '2017-10-03 06:54:38', '2017-10-03 06:54:38'),
-(4, 'Cấu Hình', '2017-10-03 06:54:38', '2017-10-03 06:54:38');
+(4, 'Cấu Hình', '2017-10-03 06:54:38', '2017-10-03 06:54:38'),
+(5, 'Location', '2017-10-03 13:40:42', '2017-10-03 13:40:42');
 
 -- --------------------------------------------------------
 
@@ -130,7 +132,8 @@ CREATE TABLE `locations` (
   `isActive` tinyint(1) NOT NULL DEFAULT '0',
   `order` int(11) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `path` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -170,7 +173,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (5, '2017_09_08_142322_create_news_table', 2),
 (6, '2017_09_08_092701_create_configs_tables', 3),
 (7, '2017_10_03_152342_create_categoryalbums_table', 4),
-(9, '2017_10_03_152648_create_albums_table', 5),
 (10, '2017_10_03_153539_create_location_albums_table', 5),
 (11, '2017_10_03_154633_create_locations_albums_table', 6),
 (12, '2017_10_03_154745_create_images_albums_table', 6);
@@ -241,7 +243,11 @@ INSERT INTO `permissions` (`id`, `name`, `display_name`, `description`, `categor
 (13, 'config-list', 'Toàn Quyền Cấu Hình', 'Được Toàn Quyền Cấu Hình', 4, '2017-10-03 06:56:16', '2017-10-03 06:56:16'),
 (14, 'config-create', 'Thêm Mới Cấu Hình', 'Được Thêm Mới Cấu Hình', 4, '2017-10-03 06:56:16', '2017-10-03 06:56:16'),
 (15, 'config-edit', 'Cập Nhật Cấu Hình', 'Được Cập Nhật Cấu Hình', 4, '2017-10-03 06:56:16', '2017-10-03 06:56:16'),
-(16, 'config-delete', 'Xóa Cấu Hình', 'Được Xóa Cấu Hình', 4, '2017-10-03 06:56:16', '2017-10-03 06:56:16');
+(16, 'config-delete', 'Xóa Cấu Hình', 'Được Xóa Cấu Hình', 4, '2017-10-03 06:56:16', '2017-10-03 06:56:16'),
+(17, 'location-list', 'Xem Danh Sách Địa Điểm', 'Được Xem Danh Sách Địa Điểm', 5, '2017-10-03 13:40:54', '2017-10-03 13:40:54'),
+(18, 'location-create', 'Thêm Mới Địa Điểm', 'Được Thêm Mới Địa Điểm', 5, '2017-10-03 13:40:54', '2017-10-03 13:40:54'),
+(19, 'location-edit', 'Cập Nhật Địa Điểm', 'Được Cập Nhật Địa Điểm', 5, '2017-10-03 13:40:54', '2017-10-03 13:40:54'),
+(20, 'location-delete', 'Xóa Địa Điểm', 'Được Xóa Địa Điểm', 5, '2017-10-03 13:40:54', '2017-10-03 13:40:54');
 
 -- --------------------------------------------------------
 
@@ -274,7 +280,11 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (13, 1),
 (14, 1),
 (15, 1),
-(16, 1);
+(16, 1),
+(17, 1),
+(18, 1),
+(19, 1),
+(20, 1);
 
 -- --------------------------------------------------------
 
@@ -484,7 +494,7 @@ ALTER TABLE `category_albums`
 -- AUTO_INCREMENT for table `category_permissions`
 --
 ALTER TABLE `category_permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `configs`
 --
@@ -514,7 +524,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `roles`
 --

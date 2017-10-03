@@ -13,17 +13,20 @@ class CategoryPermissionsSeeder extends Seeder
     public function run()
     {
         $category_permission = [
+//            [
+//                'name' => 'Role' // optional
+//            ],
+//            [
+//                'name' => 'User' //
+//            ],
+//            [
+//                'name' => 'Tin Tức', //
+//            ],
+//            [
+//                'name' => 'Cấu Hình', //
+//            ],
             [
-                'name' => 'Role' // optional
-            ],
-            [
-                'name' => 'User' //
-            ],
-            [
-                'name' => 'Tin Tức', //
-            ],
-            [
-                'name' => 'Cấu Hình', //
+                'name' => 'Location', //
             ],
 
         ];
