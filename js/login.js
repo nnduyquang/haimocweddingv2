@@ -13,7 +13,7 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.success) {
                     // alert( getBaseURL() + "sml_admin/dashboard");
-                    window.location = getBaseURL() + "sml_admin/posts/trang-chu";
+                    window.location = getBaseURL() + "sml_admin/dashboard";
                 }
                 else {
                     alert('fail');

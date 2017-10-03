@@ -976,6 +976,7 @@ This class is added to the container
 
 #chitiet-album img.img-top {
   width: 100%;
+  margin-bottom: 60px;
 }
 
 #chitiet-album h3.title {
@@ -998,19 +999,20 @@ This class is added to the container
   content: ' ';
 }
 
-#chitiet-album #location {
+#chitiet-album #album-location {
   background: #00999f;
+  padding: 15px;
 }
 
-#chitiet-album #location h3 {
+#chitiet-album #album-location h3 {
   color: white;
 }
 
-#chitiet-album #location ul {
-  padding: 28px 25px;
+#chitiet-album #album-location ul {
+  padding-top: 25px;
 }
 
-#chitiet-album #location ul li a {
+#chitiet-album #album-location ul li a {
   color: white;
   font-size: 20px;
   line-height: 1.6;
@@ -1109,6 +1111,221 @@ This class is added to the container
   #chitiet-album .grid-item img {
     width: 100%;
   }
+}
+
+#location img.img-top {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+#location h3.title {
+  text-align: center;
+  position: relative;
+  font-size: 39px;
+  color: #00999f;
+  padding-bottom: 60px;
+}
+
+#location h3.title:after {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  display: block;
+  width: 60px;
+  height: 1px;
+  margin-left: -30px;
+  background-color: #c8c8c8;
+  content: ' ';
+}
+
+#location p.info {
+  line-height: 2.0;
+  color: #616161;
+  font-style: italic;
+}
+
+#location #location-info {
+  position: relative;
+  margin-top: 60px;
+  font-style: italic;
+  background-size: cover;
+  background-position: center center;
+}
+
+#location #location-info .location-filter {
+  background: rgba(0, 0, 0, 0.7);
+  padding-bottom: 75px;
+}
+
+#location #location-info .location-filter h2.title-location-info {
+  color: white;
+  font-size: 30px;
+  font-weight: 200;
+  text-align: center;
+  padding-bottom: 75px;
+  font-style: normal;
+  margin-top: 75px;
+}
+
+#location #location-info .location-filter img.img-info {
+  width: 100%;
+}
+
+#location #location-info .location-filter h3.title-info {
+  color: white;
+  font-size: 17px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#location #location-info .location-filter p.info {
+  line-height: 1.6;
+  color: white;
+}
+
+#location #location-list-album h3.title-list-album {
+  color: #00999f;
+  font-size: 30px;
+  font-weight: 200;
+  text-align: center;
+  padding-bottom: 75px;
+  font-style: normal;
+  margin-top: 75px;
+}
+
+#location #location-list-album .one-item {
+  text-align: center;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+
+#location #location-list-album .one-item a {
+  color: #00999f;
+}
+
+#location #location-list-album .one-item a img {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+#location #location-list-album .one-item a .item-info {
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  padding: 15px;
+  margin: -20px auto 0;
+  width: 80%;
+}
+
+#location #location-list-album .one-item a .item-info p.title {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+#location #location-list-album .one-item a .item-info p.btn {
+  display: block;
+  border: 1px solid #00999f;
+  text-transform: uppercase;
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#location #location-list-album .one-item a .item-info:before {
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 1px 6px 20px 0px rgba(0, 0, 0, 0.35);
+          box-shadow: 1px 6px 20px 0px rgba(0, 0, 0, 0.35);
+  content: ' ';
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+          transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#location #location-list-album .one-item a:hover .item-info p.btn {
+  background-color: #00999f;
+  color: white;
+}
+
+#bao-gia h3.title-top-bao-gia {
+  text-align: center;
+  position: relative;
+  font-size: 39px;
+  color: #00999f;
+  padding-bottom: 60px;
+  text-transform: uppercase;
+}
+
+#bao-gia h3.title-top-bao-gia:after {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  display: block;
+  width: 60px;
+  height: 1px;
+  margin-left: -30px;
+  background-color: #c8c8c8;
+  content: ' ';
+}
+
+#bao-gia p.p-top-baogia {
+  font-style: italic;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+#bao-gia .one-item-bao-gia {
+  margin-bottom: 20px;
+}
+
+#bao-gia .one-item-bao-gia a {
+  color: #00999f;
+}
+
+#bao-gia .one-item-bao-gia a img.img-bao-gia {
+  width: 100%;
+}
+
+#bao-gia .one-item-bao-gia a h3.title-baogia {
+  text-transform: uppercase;
+  font-size: 16px;
+  display: block;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+#bao-gia .one-item-bao-gia a p.info-baogia {
+  font-style: italic;
+  text-align: justify;
+  padding-top: 20px;
+}
+
+#chi-tiet-bao-gia h3.title-chitiet-baogia {
+  text-align: center;
+  position: relative;
+  font-size: 39px;
+  color: #00999f;
+  padding-bottom: 60px;
+  text-transform: uppercase;
+}
+
+#chi-tiet-bao-gia img.img-chi-tiet-bao-gia {
+  width: 100%;
 }
 
 body {

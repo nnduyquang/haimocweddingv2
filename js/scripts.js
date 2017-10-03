@@ -1,7 +1,8 @@
 var plugins = {
     slider1: $('#slider1'),
     s3ImageSelected: $('.s3-wrap-location ul li'),
-    gridAlbum: $('.grid-haha')
+    gridAlbum: $('.grid-haha'),
+    fancybox:$('.fancybox'),
 };
 $(document).ready(function () {
     function runSlider1() {
@@ -22,6 +23,9 @@ $(document).ready(function () {
             $('[data-map-name=' + selectedMapName + ']').addClass('img-active');
         });
     }
+    function runFancybox(){
+        plugins.fancybox.fancybox();
+    }
 
     function runGridAlbum() {
         var $grid = plugins.gridAlbum.masonry({
@@ -32,7 +36,7 @@ $(document).ready(function () {
         $grid.imagesLoaded().progress(function () {
             $grid.masonry();
         });
-        $(".fancybox").fancybox();
+        // $(".fancybox").fancybox();
         var isOpen = true;
         $('.choose-dd').click(function () {
             if (isOpen) {
@@ -49,6 +53,9 @@ $(document).ready(function () {
         });
 
 
+    }
+    if(plugins.fancybox.length){
+        runFancybox();
     }
 
     if (plugins.s3ImageSelected.length) {

@@ -1,0 +1,50 @@
+#bao-gia {
+  h3.title-top-bao-gia {
+    text-align: center;
+    position: relative;
+    font-size: 39px;
+    color: $main-a-hover;
+    padding-bottom: 60px;
+    text-transform: uppercase;
+  }
+  h3.title-top-bao-gia:after {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    display: block;
+    width: 60px;
+    height: 1px;
+    margin-left: -30px;
+    background-color: #c8c8c8;
+    content: ' ';
+  }
+  p.p-top-baogia {
+    font-style: italic;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .one-item-bao-gia {
+
+    margin-bottom: 20px;
+    a {
+      color: $main-a-hover;
+      img.img-bao-gia {
+        width: 100%;
+      }
+      h3.title-baogia {
+        text-transform: uppercase;
+        font-size: 16px;
+        display: block;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        border-bottom: 1px solid #ccc;
+      }
+      p.info-baogia {
+        font-style: italic;
+        text-align: justify;
+        padding-top: 20px;
+      }
+    }
+  }
+}

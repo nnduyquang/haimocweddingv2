@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="s3-wrap-location">
                     <ul>
-                        <li data-map="deo-hai-van"><a href="">Đèo Hải Vân</a></li>
+                        <li data-map="deo-hai-van"><a href="{{URL::to('dia-diem')}}">Đèo Hải Vân</a></li>
                         <li data-map="cau-tinh-yeu"><a href="">Cầu Tình Yêu</a></li>
                         <li data-map="resort"><a href="">Resort</a></li>
                         <li data-map="phim-truong"><a href="">Phim Trường</a></li>

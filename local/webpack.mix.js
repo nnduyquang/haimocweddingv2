@@ -41,12 +41,19 @@ mix.styles([
     ], '../css/themes', false)
     .styles([
         'bower_components/AdminLTE/dist/css/AdminLTE.min.css',
-        'bower_components/AdminLTE/dist/css/skins/skin-blue.min.css'
+        'bower_components/AdminLTE/dist/css/skins/skin-blue.min.css',
+        'bower_components/bootstrap-toggle/css/bootstrap-toggle.min.css',
     ], '../css/core.backend.css')
     //JS CORE BACKEND
     .styles([
         'bower_components/AdminLTE/dist/js/app.min.js',
+        'bower_components/bootstrap-toggle/js/bootstrap-toggle.min.js',
     ], '../js/core.backend.js')
+    .styles([
+        'resources/assets/js/ulti.js',
+        'resources/assets/js/be.news.js',
+    ], '../js/backend.js')
+    .sass('resources/assets/sass/backend.scss', '../../css/backend.css').options({processCssUrls: false})
     .styles([
         'resources/assets/js/login1.js',
     ], '../js/login.js')

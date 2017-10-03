@@ -72,7 +72,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="location" class="col-md-2 hidden-xs hidden-sm">
+                <div id="album-location" class="col-md-2 hidden-xs hidden-sm">
                     <h3>Nơi Chụp</h3>
                     <ul>
                         <li><a href="">Đồi Chè</a></li>

@@ -24,7 +24,7 @@
                                             <li><a href="">Áo Cưới</a></li>
                                         </ul>
                                         <ul class="menu-boottom-info-right">
-                                            <li><a href="">Báo Giá</a></li>
+                                            <li><a href="{{URL::to('bao-gia')}}">Bảng Giá</a></li>
                                             <li><a href="">Khuyến Mãi</a></li>
                                             <li><a href="">Tin Tức</a></li>
                                         </ul>
