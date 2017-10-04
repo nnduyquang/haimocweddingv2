@@ -129,7 +129,11 @@
         <div class="col-md-12">
             <div class="form-group">
                 <strong>Tình Trạng:</strong>
-                <input name="news_is_post" data-on="Đăng" data-off="Không Đăng" type="checkbox" data-toggle="toggle">
+                <input name="location_is_active" data-on="Đăng" data-off="Không Đăng" type="checkbox" data-toggle="toggle">
+            </div>
+            <div class="form-group">
+                <strong>Thứ tự:</strong>
+                {!! Form::text('location_order', null, array('placeholder' => 'Thứ Tự','class' => 'form-control')) !!}
             </div>
         </div>
 
