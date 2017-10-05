@@ -72,6 +72,16 @@ Route::group(['middleware' => ['auth']], function () {
     Route::patch('sml_admin/dia-diem/{id}', ['as' => 'location.update', 'uses' => 'LocationController@update', 'middleware' => ['permission:location-edit']]);
     Route::delete('sml_admin/dia-diem/{id}', ['as' => 'location.destroy', 'uses' => 'LocationController@destroy', 'middleware' => ['permission:location-delete']]);
 
+    //ALBUM
+    Route::get('sml_admin/album', ['as' => 'album.index', 'uses' => 'AlbumController@index', 'middleware' => ['permission:album-list|album-create|album-edit|album-delete']]);
+    Route::post('sml_admin/albumm/create', ['as' => 'album.store', 'uses' => 'AlbumController@store', 'middleware' => ['permission:album-create']]);
+    Route::post('sml_admin/album', ['as' => 'album.search', 'uses' => 'AlbumController@search']);
+    Route::get('sml_admin/album/create', ['as' => 'album.create', 'uses' => 'AlbumController@create', 'middleware' => ['permission:album-create']]);
+    Route::get('sml_admin/album/{id}/edit', ['as' => 'album.edit', 'uses' => 'AlbumController@edit', 'middleware' => ['permission:album-edit']]);
+    Route::patch('sml_admin/album/{id}', ['as' => 'album.update', 'uses' => 'AlbumController@update', 'middleware' => ['permission:album-edit']]);
+    Route::delete('sml_admin/album/{id}', ['as' => 'album.destroy', 'uses' => 'AlbumController@destroy', 'middleware' => ['permission:album-delete']]);
+
+
 
     //CONFIG
     //--GENERAL--//

@@ -113,29 +113,53 @@ class PermissionTableSeeder extends Seeder
 //                'category_permission_id'=>4
 //            ],
 
+//            [
+//                'name' => 'location-list',
+//                'display_name' => 'Xem Danh Sách Địa Điểm',
+//                'description' => 'Được Xem Danh Sách Địa Điểm',
+//                'category_permission_id'=>5
+//            ],
+//            [
+//                'name' => 'location-create',
+//                'display_name' => 'Thêm Mới Địa Điểm',
+//                'description' => 'Được Thêm Mới Địa Điểm',
+//                'category_permission_id'=>5
+//            ],
+//            [
+//                'name' => 'location-edit',
+//                'display_name' => 'Cập Nhật Địa Điểm',
+//                'description' => 'Được Cập Nhật Địa Điểm',
+//                'category_permission_id'=>5
+//            ],
+//            [
+//                'name' => 'location-delete',
+//                'display_name' => 'Xóa Địa Điểm',
+//                'description' => 'Được Xóa Địa Điểm',
+//                'category_permission_id'=>5
+//            ]
             [
-                'name' => 'location-list',
-                'display_name' => 'Xem Danh Sách Địa Điểm',
-                'description' => 'Được Xem Danh Sách Địa Điểm',
-                'category_permission_id'=>5
+                'name' => 'album-list',
+                'display_name' => 'Xem Danh Sách Album',
+                'description' => 'Được Xem Danh SáchAlbum',
+                'category_permission_id'=>7
             ],
             [
-                'name' => 'location-create',
-                'display_name' => 'Thêm Mới Địa Điểm',
-                'description' => 'Được Thêm Mới Địa Điểm',
-                'category_permission_id'=>5
+                'name' => 'album-create',
+                'display_name' => 'Thêm Mới Album',
+                'description' => 'Được Thêm Mới Album',
+                'category_permission_id'=>7
             ],
             [
-                'name' => 'location-edit',
-                'display_name' => 'Cập Nhật Địa Điểm',
-                'description' => 'Được Cập Nhật Địa Điểm',
-                'category_permission_id'=>5
+                'name' => 'album-edit',
+                'display_name' => 'Cập Nhật Album',
+                'description' => 'Được Cập Nhật Album',
+                'category_permission_id'=>7
             ],
             [
-                'name' => 'location-delete',
-                'display_name' => 'Xóa Địa Điểm',
-                'description' => 'Được Xóa Địa Điểm',
-                'category_permission_id'=>5
+                'name' => 'album-delete',
+                'display_name' => 'Xóa Địa Album',
+                'description' => 'Được Xóa Album',
+                'category_permission_id'=>7
             ]
 
         ];

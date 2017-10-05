@@ -39,11 +39,11 @@
                 <strong>
                     Ảnh Cover</strong>
                 <div class="form-inline">
-                    {!! Form::text('image-cover', url('/').'/'.$location->image-cover, array('placeholder' => '','class' => 'form-control','id'=>'pathCover')) !!}
+                    {!! Form::text('image-cover', url('/').'/'.$location->image_cover, array('placeholder' => '','class' => 'form-control','id'=>'pathCover')) !!}
                     {!! Form::button('Browses', array('id' => 'btnBrowseCover','class'=>'btn btn-primary')) !!}
                 </div>
                 <div class="form-group">
-                    {{ Html::image($location->image-cover,'',array('id'=>'showDDCover','class'=>'showDDCover'))}}
+                    {{ Html::image($location->image_cover,'',array('id'=>'showDDCover','class'=>'showDDCover'))}}
                 </div>
             </div>
         </div>
@@ -52,11 +52,11 @@
                 <strong>
                     Ảnh Avatar</strong>
                 <div class="form-inline">
-                    {!! Form::text('image-avata', url('/').'/'.$location->image-avata, array('placeholder' => '','class' => 'form-control','id'=>'pathAvata')) !!}
+                    {!! Form::text('image-avata', url('/').'/'.$location->image_avata, array('placeholder' => '','class' => 'form-control','id'=>'pathAvata')) !!}
                     {!! Form::button('Browses', array('id' => 'btnBrowseAvata','class'=>'btn btn-primary')) !!}
                 </div>
                 <div class="form-group">
-                    {{ Html::image($location->image-avata,'',array('id'=>'showDDAvata','class'=>'showDDAvata'))}}
+                    {{ Html::image($location->image_avata,'',array('id'=>'showDDAvata','class'=>'showDDAvata'))}}
                 </div>
             </div>
         </div>
@@ -65,11 +65,11 @@
                 <strong>
                     Ảnh Background</strong>
                 <div class="form-inline">
-                    {!! Form::text('image-background', url('/').'/'.$location->image-background, array('placeholder' => '','class' => 'form-control','id'=>'pathBackground')) !!}
+                    {!! Form::text('image-background', url('/').'/'.$location->image_background, array('placeholder' => '','class' => 'form-control','id'=>'pathBackground')) !!}
                     {!! Form::button('Browses', array('id' => 'btnBrowseBackground','class'=>'btn btn-primary')) !!}
                 </div>
                 <div class="form-group">
-                    {{ Html::image($location->image-background,'',array('id'=>'showDDBackground','class'=>'showDDBackground'))}}
+                    {{ Html::image($location->image_background,'',array('id'=>'showDDBackground','class'=>'showDDBackground'))}}
                 </div>
             </div>
         </div>
@@ -93,8 +93,8 @@
                     <div class="form-group">
                         {{ Html::image($location->image_mota_1,'',array('id'=>'showHinh1','class'=>'showHinh1'))}}
                     </div>
-                    {!! Form::text('title-mota-1', null, array('placeholder'=>'Tiêu Đề 1','class' => 'form-control')) !!}
-                    {!! Form::textarea('content-mota-1',$location->content-mota-1, array('placeholder' => 'Mô Tả 1','id'=>'content-mota-1','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
+                    {!! Form::text('title-mota-1', $location->title_mota_1, array('placeholder'=>'Tiêu Đề 1','class' => 'form-control')) !!}
+                    {!! Form::textarea('content-mota-1',$location->content_mota_1, array('placeholder' => 'Mô Tả 1','id'=>'content-mota-1','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
@@ -107,8 +107,8 @@
                     <div class="form-group">
                         {{ Html::image($location->image_mota_2,'',array('id'=>'showHinh2','class'=>'showHinh2'))}}
                     </div>
-                    {!! Form::text('title-mota-2', null, array('placeholder'=>'Tiêu Đề 2','class' => 'form-control')) !!}
-                    {!! Form::textarea('content-mota-2',$location->content-mota-2, array('placeholder' => 'Mô Tả 2','id'=>'content-mota-2','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
+                    {!! Form::text('title-mota-2', $location->title_mota_2, array('placeholder'=>'Tiêu Đề 2','class' => 'form-control')) !!}
+                    {!! Form::textarea('content-mota-2',$location->content_mota_2, array('placeholder' => 'Mô Tả 2','id'=>'content-mota-2','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
@@ -121,8 +121,8 @@
                     <div class="form-group">
                         {{ Html::image($location->image_mota_3,'',array('id'=>'showHinh3','class'=>'showHinh3'))}}
                     </div>
-                    {!! Form::text('title-mota-3', null, array('placeholder'=>'Tiêu Đề 3','class' => 'form-control')) !!}
-                    {!! Form::textarea('content-mota-3',$location->content-mota-3, array('placeholder' => 'Mô Tả 3','id'=>'content-mota-3','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
+                    {!! Form::text('title-mota-3', $location->title_mota_3, array('placeholder'=>'Tiêu Đề 3','class' => 'form-control')) !!}
+                    {!! Form::textarea('content-mota-3',$location->content_mota_3, array('placeholder' => 'Mô Tả 3','id'=>'content-mota-3','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
                 </div>
             </div>
         </div>
@@ -138,7 +138,7 @@
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button id="btnDanhMuc" type="submit" class="btn btn-primary">Tạo Mới Địa Điểm</button>
+            <button id="btnDanhMuc" type="submit" class="btn btn-primary">Cập Nhật Địa Điểm</button>
         </div>
     </div>
     {!! Form::close() !!}

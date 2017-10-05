@@ -1,6 +1,6 @@
 @extends('backend.admin.master')
 @section('styles')
-    {{ Html::style('css/be.news.css') }}
+
 @stop
 @section('scripts')
 
@@ -9,11 +9,11 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Quản Lý Địa Điểm</h2>
+                <h2>Quản Lý Album</h2>
             </div>
             <div class="pull-right">
-                @permission(('location-create'))
-                <a class="btn btn-success" href="{{ route('location.create') }}"> Tạo Mới Địa Điểm</a>
+                @permission(('album-create'))
+                <a class="btn btn-success" href="{{ route('album.create') }}"> Tạo Mới Album</a>
                 @endpermission
             </div>
         </div>
@@ -23,7 +23,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-    {!! Form::open(array('route' => 'location.search','method'=>'POST','id'=>'formSearchLocation')) !!}
+    {!! Form::open(array('route' => 'album.search','method'=>'POST','id'=>'formSearchAlbum')) !!}
     <div class="col-md-12">
         <div class="row">
             <div class="form-group">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    {!! Form::button('Tìm Kiếm', array('id' => 'btnSearchTinTuc','class'=>'btn btn-primary')) !!}
+                    {!! Form::button('Tìm Kiếm', array('id' => 'btnSearchAlbum','class'=>'btn btn-primary')) !!}
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
     @if(!empty($keywords))
         <div id="showKeySearch" class="col-md-12">
             <div class="row wrap-search">
-                <i class="fa fa-caret-right" aria-hidden="true"></i>{{$keywords}} <a href="{{ route('location.search') }}">X</a>
+                <i class="fa fa-caret-right" aria-hidden="true"></i>{{$keywords}} <a href="{{ route('album.search') }}">X</a>
             </div>
         </div>
         {{ Form::hidden('hdKeyword', $keywords) }}
@@ -50,24 +50,26 @@
     <table class="table table-bordered">
         <tr>
             <th>TT</th>
-            <th>Tên Địa Điểm</th>
+            <th>Tên Album</th>
+            <th>Người Đăng</th>
             <th>Ngày Đăng</th>
             <th>Ngày Cập Nhật</th>
             <th>Tình Trạng</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($locations as $key => $data)
+        @foreach ($albums as $key => $data)
             <td>{{ ++$i }}</td>
             <td>{{ $data->name }}</td>
+            <td>{{ $data->users->name }}</td>
             <td>{{ $data->created_at }}</td>
             <td>{{ $data->updated_at }}</td>
             <td>{{$data->isActive}}</td>
             <td>
-                @permission(('location-edit'))
-                <a class="btn btn-primary" href="{{ route('location.edit',$data->id) }}">Edit</a>
+                @permission(('album-edit'))
+                <a class="btn btn-primary" href="{{ route('album.edit',$data->id) }}">Edit</a>
                 @endpermission
-                @permission(('location-delete'))
-                {!! Form::open(['method' => 'DELETE','route' => ['location.destroy', $data->id],'style'=>'display:inline']) !!}
+                @permission(('album-delete'))
+                {!! Form::open(['method' => 'DELETE','route' => ['album.destroy', $data->id],'style'=>'display:inline']) !!}
                 {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                 {!! Form::close() !!}
                 @endpermission
@@ -75,5 +77,5 @@
             </tr>
         @endforeach
     </table>
-    {!! $locations->links() !!}
+    {!! $albums->links() !!}
 @stop

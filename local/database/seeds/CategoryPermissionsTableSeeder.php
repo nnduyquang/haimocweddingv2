@@ -25,8 +25,11 @@ class CategoryPermissionsSeeder extends Seeder
 //            [
 //                'name' => 'Cấu Hình', //
 //            ],
+//            [
+//                'name' => 'Location', //
+//            ],
             [
-                'name' => 'Location', //
+                'name' => 'Album', //
             ],
 
         ];

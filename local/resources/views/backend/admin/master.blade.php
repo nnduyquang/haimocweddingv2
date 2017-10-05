@@ -242,6 +242,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     @endif
                     <li><a href="{{ route('news.index') }}"><i class="fa fa-link"></i> <span>Tin Tức</span></a></li>
                     <li><a href="{{ route('location.index') }}"><i class="fa fa-link"></i> <span>Địa Điểm</span></a></li>
+                    <li><a href="{{ route('album.index') }}"><i class="fa fa-link"></i> <span>Album</span></a></li>
                     <li class="treeview">
                         <a href="#"><i class="fa fa-link"></i><span>Bài Viết</span>
                             <span class="pull-right-container">
