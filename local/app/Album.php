@@ -16,4 +16,8 @@ class Album extends Model
     {
         return $this->belongsTo('App\User', 'user_id');
     }
+    public function imageAlbums()
+    {
+        return $this->hasMany('App\ImagesAlbum','album_id','id');
+    }
 }

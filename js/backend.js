@@ -196,6 +196,10 @@ function selectFileWithCKFinder(elementId,showHinhId) {
         'resizable=1, scrollbars=0, width=800, height=600'
     );
 }
+//
+// $(document).ready(function () {
+$('.fancybox').fancybox();
+// });
 if ($('#btnThemAnhAlbum').length) {
     var button1 = document.getElementById('btnThemAnhAlbum');
 
@@ -218,17 +222,35 @@ function selectFileAlbumWithCKFinder() {
 }
 function appendHtml(path) {
     var html = "<div class='col-md-1'>"
-        + "<img src='" + path + "' class='img-choose' alt=''>"
+        + "<a class='fancybox' data-fancybox='gallery' href='" + path + "'>"
+        + "<img src='" + path + "' class='img-choose' alt=''></a>"
         + "<input name='imageChooses[]' type='checkbox' value='" + path + "'>"
         + "</div>";
     return html;
 }
 $('#btnXoaAnhAlbum').click(function () {
-    $.each($("input[name='imageChoose[]']:checked"), function () {
+    $.each($("input[name='imageChooses[]']:checked"), function () {
         $(this).parent().remove();
     });
 });
-$('#btnSubmitThemAlbum').click(function(){
+$('#btnXoaAnhAlbumEdit').click(function () {
+    var listID = "";
+    $.each($("input[name='imageChooses[]']:checked"), function () {
+        // $(this).parent().remove();
+        var attr = $(this).attr('data-id');
+        if (typeof attr !== typeof undefined && attr !== false) {
+            listID += $(this).attr('data-id') + '-';
+            $(this).parent().remove();
+        } else {
+            $(this).parent().remove();
+        }
+    });
+    var hdListID = $('input[name=listIDDelete]').val();
+    hdListID += listID;
+    $('input[name=listIDDelete]').val(hdListID);
+    // alert(listID);
+});
+$('#btnSubmitThemAlbum').click(function () {
     $.each($("input[name='imageChooses[]']"), function () {
         $(this).prop('checked', true);
     });
@@ -238,7 +260,7 @@ if ($('#btnBrowseAlbumCover').length) {
     var button1 = document.getElementById('btnBrowseAlbumCover');
 
     button1.onclick = function () {
-        selectFileWithCKFinder('pathAlbumCover','showHinhAlbumCover');
+        selectFileWithCKFinder('pathAlbumCover', 'showHinhAlbumCover');
     }
 }
 if ($('#content-album').length) {
@@ -254,4 +276,32 @@ if ($('#content-album').length) {
         filebrowserFlashUploadUrl: '../../js/kcfinder/upload.php?type=flash'
     })
     ;
+}
+if ($('#btnBrowseImageSlider').length) {
+    var button1 = document.getElementById('btnBrowseImageSlider');
+
+    button1.onclick = function () {
+        selectFileWithKCFinder('path');
+    }
+}
+;
+if ($('#path').val() == '')
+    $('#showSliderImage').hide();
+else
+    $('#showSliderImage').show();
+
+function selectFileWithKCFinder(elementId) {
+    window.KCFinder = {
+        callBack: function (url) {
+            var output = document.getElementById(elementId);
+            output.value = url;
+            $('#showSliderImage').show();
+            $('#showSliderImage').fadeIn("fast").attr('src', url);
+            window.KCFinder = null;
+        }
+    };
+    window.open(getBaseURL()+'js/kcfinder/browse.php?type=images', 'kcfinder_textbox',
+        'status=0, toolbar=0, location=0, menubar=0, directories=0, ' +
+        'resizable=1, scrollbars=0, width=800, height=600'
+    );
 }

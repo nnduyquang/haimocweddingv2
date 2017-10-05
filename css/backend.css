@@ -23,3 +23,12 @@ img.showHinh1, img.showHinh2, img.showHinh3, img.showDDCover, img.showDDAvata, i
 img.img-choose, img.showHinhAlbumCover {
   width: 100%;
 }
+
+img.img-choose {
+  height: 50px;
+}
+
+.showHinhSlider {
+  min-width: 60%;
+  height: 160px;
+}

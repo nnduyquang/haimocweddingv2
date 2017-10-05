@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Chỉnh Sửa Tin Tức</h2>
+                <h2>Chỉnh Sửa Album</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('album.index') }}"> Back</a>
@@ -26,7 +26,7 @@
             </ul>
         </div>
     @endif
-    {!! Form::model($album,array('route' => ['album.update',$album->id],'method'=>'PATCH')) !!}
+    {!! Form::model($album,array('route' => ['album.update',$album->id],'method'=>'PATCH','id'=>'formThem')) !!}
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
@@ -39,17 +39,20 @@
                 <div class="col-md-12">
                     <div class="row" id="insertImage">
                         @foreach($imageAlbum as $key=>$data)
-                            <div class='col-md-1'>"
-                                <img src='{{url('/').'/'.$data->image}}' class='img-choose' alt=''>"
-                                <input name='imageChooses[]' type='checkbox' value='{{url('/').'/'.$data->image}}'>"
+                            <div class='col-md-1'>
+                                <a class="fancybox" data-fancybox="gallery"
+                                   href="{{url('/').'/'.$data->image}}">
+                                    <img src='{{url('/').'/'.$data->image}}' class='img-choose'  alt=''></a>
+                                <input name='imageChooses[]' type='checkbox' data-id="{{$data->id}}" value='{{url('/').'/'.$data->image}}'>
                             </div>
                         @endforeach
                     </div>
+                    {{ Form::hidden('listIDDelete', '') }}
                 </div>
                 <div class="col-md-12 text-center">
                     <div class="row">
                         <button id="btnThemAnhAlbum" type="button" class="btn btn-primary">Thêm Ảnh Vào Album</button>
-                        <button id="btnXoaAnhAlbum" type="button" class="btn btn-primary">Xóa Ảnh</button>
+                        <button id="btnXoaAnhAlbumEdit" type="button" class="btn btn-primary">Xóa Ảnh</button>
                     </div>
                 </div>
 
@@ -70,7 +73,7 @@
                             }
                         @endphp
                         @foreach ($locations as $key => $data)
-                            @if (in_array($locations->id,explode("-",substr($string_idLocation,0,-1)) ) !== false)
+                            @if (in_array($data->id,explode("-",substr($string_idLocation,0,-1)) ) !== false)
                                 {{ Form::checkbox('locations[]', $data->id),true }} {{$data->name}}<br>
                             @else
                                 {{ Form::checkbox('locations[]', $data->id) }} {{$data->name}}<br>
@@ -110,13 +113,13 @@
         <div class="col-md-12">
             <div class="form-group">
                 <strong>Tình Trạng:</strong>
-                <input name="album_is_active" data-on="Đăng" data-off="Không Đăng" type="checkbox"
+                <input {{$album->isActive==1?'checked':''}} name="album_is_active" data-on="Đăng" data-off="Không Đăng" type="checkbox"
                        data-toggle="toggle">
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button id="btnSubmitThemAlbum" type="button" class="btn btn-primary">Tạo Mới Album</button>
+            <button id="btnSubmitThemAlbum" type="button" class="btn btn-primary">Cập Nhật Album</button>
         </div>
     </div>
     {!! Form::close() !!}

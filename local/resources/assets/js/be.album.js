@@ -1,3 +1,7 @@
+//
+// $(document).ready(function () {
+$('.fancybox').fancybox();
+// });
 if ($('#btnThemAnhAlbum').length) {
     var button1 = document.getElementById('btnThemAnhAlbum');
 
@@ -20,17 +24,35 @@ function selectFileAlbumWithCKFinder() {
 }
 function appendHtml(path) {
     var html = "<div class='col-md-1'>"
-        + "<img src='" + path + "' class='img-choose' alt=''>"
+        + "<a class='fancybox' data-fancybox='gallery' href='" + path + "'>"
+        + "<img src='" + path + "' class='img-choose' alt=''></a>"
         + "<input name='imageChooses[]' type='checkbox' value='" + path + "'>"
         + "</div>";
     return html;
 }
 $('#btnXoaAnhAlbum').click(function () {
-    $.each($("input[name='imageChoose[]']:checked"), function () {
+    $.each($("input[name='imageChooses[]']:checked"), function () {
         $(this).parent().remove();
     });
 });
-$('#btnSubmitThemAlbum').click(function(){
+$('#btnXoaAnhAlbumEdit').click(function () {
+    var listID = "";
+    $.each($("input[name='imageChooses[]']:checked"), function () {
+        // $(this).parent().remove();
+        var attr = $(this).attr('data-id');
+        if (typeof attr !== typeof undefined && attr !== false) {
+            listID += $(this).attr('data-id') + '-';
+            $(this).parent().remove();
+        } else {
+            $(this).parent().remove();
+        }
+    });
+    var hdListID = $('input[name=listIDDelete]').val();
+    hdListID += listID;
+    $('input[name=listIDDelete]').val(hdListID);
+    // alert(listID);
+});
+$('#btnSubmitThemAlbum').click(function () {
     $.each($("input[name='imageChooses[]']"), function () {
         $(this).prop('checked', true);
     });
@@ -40,7 +62,7 @@ if ($('#btnBrowseAlbumCover').length) {
     var button1 = document.getElementById('btnBrowseAlbumCover');
 
     button1.onclick = function () {
-        selectFileWithCKFinder('pathAlbumCover','showHinhAlbumCover');
+        selectFileWithCKFinder('pathAlbumCover', 'showHinhAlbumCover');
     }
 }
 if ($('#content-album').length) {

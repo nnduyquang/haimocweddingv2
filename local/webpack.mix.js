@@ -43,17 +43,20 @@ mix.styles([
         'bower_components/AdminLTE/dist/css/AdminLTE.min.css',
         'bower_components/AdminLTE/dist/css/skins/skin-blue.min.css',
         'bower_components/bootstrap-toggle/css/bootstrap-toggle.min.css',
+        'bower_components/fancybox/dist/jquery.fancybox.min.css',
     ], '../css/core.backend.css')
     //JS CORE BACKEND
     .styles([
-        'bower_components/AdminLTE/dist/js/app.min.js',
+        'bower_components/AdminLTE/dist/js/adminlte.min.js',
         'bower_components/bootstrap-toggle/js/bootstrap-toggle.min.js',
+        'bower_components/fancybox/dist/jquery.fancybox.min.js',
     ], '../js/core.backend.js')
     .styles([
         'resources/assets/js/ulti.js',
         'resources/assets/js/be.news.js',
         'resources/assets/js/be.location.js',
         'resources/assets/js/be.album.js',
+        'resources/assets/js/be.config.slider.js',
     ], '../js/backend.js')
     .sass('resources/assets/sass/backend.scss', '../../css/backend.css').options({processCssUrls: false})
     .styles([

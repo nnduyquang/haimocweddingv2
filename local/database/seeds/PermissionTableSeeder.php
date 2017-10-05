@@ -141,25 +141,25 @@ class PermissionTableSeeder extends Seeder
                 'name' => 'album-list',
                 'display_name' => 'Xem Danh Sách Album',
                 'description' => 'Được Xem Danh SáchAlbum',
-                'category_permission_id'=>7
+                'category_permission_id'=>6
             ],
             [
                 'name' => 'album-create',
                 'display_name' => 'Thêm Mới Album',
                 'description' => 'Được Thêm Mới Album',
-                'category_permission_id'=>7
+                'category_permission_id'=>6
             ],
             [
                 'name' => 'album-edit',
                 'display_name' => 'Cập Nhật Album',
                 'description' => 'Được Cập Nhật Album',
-                'category_permission_id'=>7
+                'category_permission_id'=>6
             ],
             [
                 'name' => 'album-delete',
                 'display_name' => 'Xóa Địa Album',
                 'description' => 'Được Xóa Album',
-                'category_permission_id'=>7
+                'category_permission_id'=>6
             ]
 
         ];
