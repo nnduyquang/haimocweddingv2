@@ -51,6 +51,7 @@
         <tr>
             <th>TT</th>
             <th>Tên Album</th>
+            <th>Loại Album</th>
             <th>Người Đăng</th>
             <th>Ngày Đăng</th>
             <th>Ngày Cập Nhật</th>
@@ -60,6 +61,7 @@
         @foreach ($albums as $key => $data)
             <td>{{ ++$i }}</td>
             <td>{{ $data->name }}</td>
+            <td>{{ $data->categoryAlbums->name }}</td>
             <td>{{ $data->users->name }}</td>
             <td>{{ $data->created_at }}</td>
             <td>{{ $data->updated_at }}</td>

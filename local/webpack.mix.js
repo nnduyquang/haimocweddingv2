@@ -56,6 +56,7 @@ mix.styles([
         'resources/assets/js/be.news.js',
         'resources/assets/js/be.location.js',
         'resources/assets/js/be.album.js',
+        'resources/assets/js/be.quotation.js',
         'resources/assets/js/be.config.slider.js',
     ], '../js/backend.js')
     .sass('resources/assets/sass/backend.scss', '../../css/backend.css').options({processCssUrls: false})

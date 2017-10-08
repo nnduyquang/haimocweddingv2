@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Album;
+use App\CategoryAlbum;
 use App\ImagesAlbum;
 use App\Location;
 use Illuminate\Http\Request;
@@ -30,7 +31,8 @@ class AlbumController extends Controller
     public function create()
     {
         $locations = Location::all()->sortBy('order');
-        return view('backend.admin.album.create', compact('roles', 'locations'));
+        $categoryAlbums=CategoryAlbum::all()->sortBy('order');
+        return view('backend.admin.album.create', compact('roles', 'locations','categoryAlbums'));
     }
 
     /**
@@ -51,6 +53,7 @@ class AlbumController extends Controller
         $imageCover = substr($imageCover, strpos($imageCover, 'images'), strlen($imageCover) - 1);
         $content = $request->input('content');
         $isActive = $request->input('album_is_active');
+        $idCategoryAlbum=$request->input('idCategoryAlbum');
         $album->name = $name;
         $album->path = $path;
         if ($order) {
@@ -65,6 +68,7 @@ class AlbumController extends Controller
         }
         $album->content = $content;
         $album->image_cover = $imageCover;
+        $album->category_album_id = $idCategoryAlbum;
         $album->user_id = Auth::user()->id;
         $album->save();
         foreach ($imageChooses as $imageChoose) {
@@ -102,7 +106,8 @@ class AlbumController extends Controller
         $album = Album::find($id);
         $locations = Location::all()->sortBy('order');
         $imageAlbum = ImagesAlbum::where('album_id','=',$album->id)->get();
-        return view('backend.admin.album.edit', compact('album', 'locations', 'imageAlbum'));
+        $categoryAlbums=CategoryAlbum::all()->sortBy('order');
+        return view('backend.admin.album.edit', compact('album', 'locations', 'imageAlbum','categoryAlbums'));
     }
 
     /**
@@ -125,6 +130,7 @@ class AlbumController extends Controller
         $imageCover = substr($imageCover, strpos($imageCover, 'images'), strlen($imageCover) - 1);
         $content = $request->input('content');
         $isActive = $request->input('album_is_active');
+        $idCategoryAlbum=$request->input('idCategoryAlbum');
         $album->name = $name;
         $album->path = $path;
         if ($order) {
@@ -139,6 +145,7 @@ class AlbumController extends Controller
         }
         $album->content = $content;
         $album->image_cover = $imageCover;
+        $album->category_album_id = $idCategoryAlbum;
         $album->user_id = Auth::user()->id;
         $album->save();
         $album->locations()->sync($locations);

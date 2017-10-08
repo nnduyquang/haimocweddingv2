@@ -11,24 +11,28 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.trangchu.index');
-});
-Route::get('/album', function () {
-    return view('frontend.album.index');
-});
-Route::get('/dia-diem', function () {
-    return view('frontend.location.index');
-});
+//Route::get('/', function () {
+//    return view('frontend.trangchu.index');
+//});
+Route::get('/','FETrangChuController@getAllInfo');
+//Route::get('/album', function () {
+//    return view('frontend.album.index');
+//});
+Route::get('/album/{pathCategory}','FEAlbumController@getAlbumsByCategory');
+//Route::get('/dia-diem', function () {
+//    return view('frontend.location.index');
+//});
+Route::get('/dia-diem/{pathLocation}', 'FELocationController@getLocationInfo');
 Route::get('/bao-gia', function () {
     return view('frontend.baogia.index');
 });
 Route::get('/bao-gia/chi-tiet', function () {
     return view('frontend.baogia.chitietbaogia.index');
 });
-Route::get('/album/chi-tiet', function () {
-    return view('frontend.album.chitietalbum.index');
-});
+//Route::get('/album/chi-tiet', function () {
+//    return view('frontend.album.chitietalbum.index');
+//});
+Route::get('album/{pathCategoryAlbum}/{pathAlbum}','FEAlbumController@getDetail');
 Route::get('/sml_login', function () {
     return view('backend.login.login1');
 });
@@ -80,6 +84,24 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('sml_admin/album/{id}/edit', ['as' => 'album.edit', 'uses' => 'AlbumController@edit', 'middleware' => ['permission:album-edit']]);
     Route::patch('sml_admin/album/{id}', ['as' => 'album.update', 'uses' => 'AlbumController@update', 'middleware' => ['permission:album-edit']]);
     Route::delete('sml_admin/album/{id}', ['as' => 'album.destroy', 'uses' => 'AlbumController@destroy', 'middleware' => ['permission:album-delete']]);
+
+    //ALBUM
+    Route::get('sml_admin/loai-album', ['as' => 'categoryalbum.index', 'uses' => 'CategoryAlbumController@index', 'middleware' => ['permission:categoryalbum-list|categoryalbum-create|categoryalbum-edit|categoryalbum-delete']]);
+    Route::post('sml_admin/loai-album/create', ['as' => 'categoryalbum.store', 'uses' => 'CategoryAlbumController@store', 'middleware' => ['permission:categoryalbum-create']]);
+    Route::get('sml_admin/loai-album/create', ['as' => 'categoryalbum.create', 'uses' => 'CategoryAlbumController@create', 'middleware' => ['permission:categoryalbum-create']]);
+    Route::get('sml_admin/loai-album/{id}/edit', ['as' => 'categoryalbum.edit', 'uses' => 'CategoryAlbumController@edit', 'middleware' => ['permission:categoryalbum-edit']]);
+    Route::patch('sml_admin/loai-album/{id}', ['as' => 'categoryalbum.update', 'uses' => 'CategoryAlbumController@update', 'middleware' => ['permission:categoryalbum-edit']]);
+    Route::delete('sml_admin/loai-album/{id}', ['as' => 'categoryalbum.destroy', 'uses' => 'CategoryAlbumController@destroy', 'middleware' => ['permission:categoryalbum-delete']]);
+
+    //QUOTATION
+    Route::get('sml_admin/bao-gia', ['as' => 'quotation.index', 'uses' => 'QuotationController@index', 'middleware' => ['permission:quotation-list|quotation-create|quotation-edit|quotation-delete']]);
+    Route::post('sml_admin/bao-gia/create', ['as' => 'quotation.store', 'uses' => 'QuotationController@store', 'middleware' => ['permission:quotation-create']]);
+    Route::post('sml_admin/bao-gia', ['as' => 'quotation.search', 'uses' => 'QuotationController@search']);
+    Route::get('sml_admin/bao-gia/create', ['as' => 'quotation.create', 'uses' => 'QuotationController@create', 'middleware' => ['permission:quotation-create']]);
+    Route::get('sml_admin/bao-gia/{id}/edit', ['as' => 'quotation.edit', 'uses' => 'QuotationController@edit', 'middleware' => ['permission:quotation-edit']]);
+    Route::patch('sml_admin/bao-gia/{id}', ['as' => 'quotation.update', 'uses' => 'QuotationController@update', 'middleware' => ['permission:quotation-edit']]);
+    Route::delete('sml_admin/bao-gia/{id}', ['as' => 'quotation.destroy', 'uses' => 'QuotationController@destroy', 'middleware' => ['permission:quotation-delete']]);
+
 
 
 
