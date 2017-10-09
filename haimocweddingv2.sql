@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2017 at 05:09 PM
+-- Generation Time: Oct 09, 2017 at 11:28 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -45,7 +45,8 @@ CREATE TABLE `albums` (
 --
 
 INSERT INTO `albums` (`id`, `name`, `content`, `path`, `image_cover`, `isActive`, `order`, `user_id`, `category_album_id`, `created_at`, `updated_at`) VALUES
-(2, 'Ảnh Cưới Đức Và Ngân', NULL, 'anh-cuoi-duc-va-ngan', 'images/uploads/images/album/ducngan/NHAT4480-min.png', 1, 1, 1, 2, '2017-10-07 05:28:50', '2017-10-08 11:14:13');
+(2, 'Ảnh Cưới Đức Và Ngân', NULL, 'anh-cuoi-duc-va-ngan', 'images/uploads/images/album/ducngan/NHAT4480-min.png', 1, 1, 1, 2, '2017-10-07 05:28:50', '2017-10-08 11:14:13'),
+(3, 'Ảnh Cưới Huy Và Trâm', '<p>1</p>', 'anh-cuoi-huy-va-tram', 'images/uploads/images/album/huytram/NAMZ1905-min.png', 1, 1, 1, 2, '2017-10-09 07:14:54', '2017-10-09 07:14:54');
 
 -- --------------------------------------------------------
 
@@ -154,7 +155,27 @@ INSERT INTO `images_albums` (`id`, `image`, `album_id`, `created_at`, `updated_a
 (21, 'images/uploads/images/album/ducngan/NHAT4782-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
 (22, 'images/uploads/images/album/ducngan/NHAT4846-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
 (23, 'images/uploads/images/album/ducngan/NHAT4848-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
-(24, 'images/uploads/images/album/ducngan/NHAT4859-min.png', 2, '2017-10-08 11:12:34', '2017-10-08 11:12:34');
+(24, 'images/uploads/images/album/ducngan/NHAT4859-min.png', 2, '2017-10-08 11:12:34', '2017-10-08 11:12:34'),
+(25, 'images/uploads/images/album/huytram/10-min.png', 3, '2017-10-09 07:14:54', '2017-10-09 07:14:54'),
+(26, 'images/uploads/images/album/huytram/NAMZ1824-min.png', 3, '2017-10-09 07:14:54', '2017-10-09 07:14:54'),
+(27, 'images/uploads/images/album/huytram/NAMZ1827-min.png', 3, '2017-10-09 07:14:54', '2017-10-09 07:14:54'),
+(28, 'images/uploads/images/album/huytram/NAMZ1874-min.png', 3, '2017-10-09 07:14:54', '2017-10-09 07:14:54'),
+(29, 'images/uploads/images/album/huytram/NAMZ1905-min.png', 3, '2017-10-09 07:14:54', '2017-10-09 07:14:54'),
+(30, 'images/uploads/images/album/huytram/NAMZ1912-min.png', 3, '2017-10-09 07:14:54', '2017-10-09 07:14:54'),
+(31, 'images/uploads/images/album/huytram/NAMZ1921-min.png', 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
+(32, 'images/uploads/images/album/huytram/NAMZ1950-min.png', 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
+(33, 'images/uploads/images/album/huytram/NAMZ2026-min.png', 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
+(34, 'images/uploads/images/album/huytram/NAMZ2048-min.png', 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
+(35, 'images/uploads/images/album/huytram/NAMZ2049-min.png', 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
+(36, 'images/uploads/images/album/huytram/NAMZ2071-min.png', 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
+(37, 'images/uploads/images/album/huytram/NAMZ2074-min.png', 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
+(38, 'images/uploads/images/album/huytram/NAMZ2144-min.png', 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
+(39, 'images/uploads/images/album/huytram/NAMZ2158-min.png', 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
+(40, 'images/uploads/images/album/huytram/NAMZ2161-min.png', 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
+(41, 'images/uploads/images/album/huytram/NAMZ2167-min.png', 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
+(42, 'images/uploads/images/album/huytram/NAMZ2188-min.png', 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
+(43, 'images/uploads/images/album/huytram/NAMZ2198-min.png', 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
+(44, 'images/uploads/images/album/huytram/NAMZ2215-min.png', 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55');
 
 -- --------------------------------------------------------
 
@@ -222,8 +243,12 @@ CREATE TABLE `location_albums` (
 --
 
 INSERT INTO `location_albums` (`location_id`, `album_id`, `created_at`, `updated_at`) VALUES
+(5, 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
 (6, 2, '2017-10-08 11:17:50', '2017-10-08 11:17:50'),
+(7, 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
 (8, 2, '2017-10-08 11:12:32', '2017-10-08 11:12:32'),
+(8, 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
+(9, 3, '2017-10-09 07:14:55', '2017-10-09 07:14:55'),
 (12, 2, '2017-10-08 11:12:32', '2017-10-08 11:12:32'),
 (13, 2, '2017-10-08 11:12:32', '2017-10-08 11:12:32');
 
@@ -631,7 +656,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `category_albums`
 --
@@ -651,7 +676,7 @@ ALTER TABLE `configs`
 -- AUTO_INCREMENT for table `images_albums`
 --
 ALTER TABLE `images_albums`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT for table `locations`
 --
