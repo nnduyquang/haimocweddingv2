@@ -28,10 +28,27 @@
     @endif
     {!! Form::model($album,array('route' => ['album.update',$album->id],'method'=>'PATCH','id'=>'formThem')) !!}
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="form-group">
                 <strong>Tên Album:</strong>
                 {!! Form::text('name', null, array('placeholder' => 'Tiêu Đề','class' => 'form-control')) !!}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <strong>Loại Album:</strong><br>
+                {{--{{ Form::hidden('hd-email-receive', $product->category_id) }}--}}
+                @foreach($categoryAlbums as $key=>$data)
+                    @if($data->id===$album->category_album_id)
+                        <div class="col-md-12">
+                            {{ Form::radio('idCategoryAlbum', $data->id,true) }}{{ $data->name}}<br>
+                        </div>
+                    @else
+                        <div class="col-md-12">
+                            {{ Form::radio('idCategoryAlbum', $data->id,false) }}{{ $data->name}}<br>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
         <div class="col-md-12">

@@ -32,3 +32,12 @@ img.img-choose {
   min-width: 60%;
   height: 160px;
 }
+
+img.showHinhQuotation {
+  width: 100%;
+}
+
+img.showHinhIndex {
+  width: 200px;
+  height: 100px;
+}

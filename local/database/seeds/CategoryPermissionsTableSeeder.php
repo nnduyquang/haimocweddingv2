@@ -28,8 +28,14 @@ class CategoryPermissionsSeeder extends Seeder
 //            [
 //                'name' => 'Location', //
 //            ],
+//            [
+//                'name' => 'Album', //
+//            ],
+//            [
+//                'name' => 'Quotation', //
+//            ],
             [
-                'name' => 'Album', //
+                'name' => 'Loại Album', //
             ],
 
         ];

@@ -20,7 +20,54 @@
     background-color: #c8c8c8;
     content: ' ';
   }
+  ul.album-category {
+    text-align: center;
+    li {
+      display: inline;
+      padding-left: 15px;
+      padding-right: 15px;
+      a {
+        color: #777;
+        transition: all 0.5s ease-in-out;
+        font-size: 18px;
+        position: relative;
+      }
+      //a:hover{
+      //  border-bottom: 1px solid;
+      //}
+      a:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: -10px;
+        height: 1px;
+        background: $main-a-hover;
+        transition: all 0.5s ease-in-out;
+      }
+      a:after {
+        content: "";
+        position: absolute;
+        left: -19px;
+        bottom: 0;
+        top: 5px;
+        margin: auto;
+        width: 4px;
+        height: 4px;
+        background: #999;
+        border-radius: 50%;
+      }
+      a:hover {
+        color: $main-a-hover;
+      }
+      a:hover:before {
+        left: 0;
+        right: 0;
+      }
+    }
+  }
   .list-album {
+    margin-top: 20px;
     .one-item {
       text-align: center;
       padding-left: 30px;

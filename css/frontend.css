@@ -377,7 +377,6 @@ This class is added to the container
 
 .menu-desktop .menu-wrap {
   height: 130px;
-  overflow: hidden;
   position: relative;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -423,7 +422,8 @@ This class is added to the container
 .menu-desktop .menu-wrap .menu-left-info {
   float: none;
   width: auto;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: -webkit-paged-x;
 }
 
 .menu-desktop .menu-wrap .menu-left-info .menu-top-info {
@@ -433,6 +433,7 @@ This class is added to the container
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   height: 70px;
+  margin-left: 20px;
 }
 
 .menu-desktop .menu-wrap .menu-left-info .menu-top-info p {
@@ -453,6 +454,7 @@ This class is added to the container
 
 .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left {
   float: left;
+  margin-left: 20px;
 }
 
 .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right {
@@ -469,10 +471,35 @@ This class is added to the container
   margin-right: 20px;
   text-transform: uppercase;
   font-weight: bolder;
+  position: relative;
 }
 
 .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li a, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li a {
   color: #00999F;
+}
+
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li.has-item-down:hover ul, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li.has-item-down:hover ul {
+  display: block;
+}
+
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left ul, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -47px;
+  background: #fff;
+  padding: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  z-index: 9;
+  width: 200px;
+}
+
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left ul li, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right ul li {
+  float: none;
+  width: 200px;
+  line-height: 1.6;
 }
 
 .wrap-fixed-top {
@@ -629,6 +656,62 @@ This class is added to the container
   margin-left: -30px;
   background-color: #c8c8c8;
   content: ' ';
+}
+
+#section2 ul.album-category {
+  text-align: center;
+}
+
+#section2 ul.album-category li {
+  display: inline;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#section2 ul.album-category li a {
+  color: #777;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  font-size: 18px;
+  position: relative;
+}
+
+#section2 ul.album-category li a:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -10px;
+  height: 1px;
+  background: #00999f;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#section2 ul.album-category li a:after {
+  content: "";
+  position: absolute;
+  left: -19px;
+  bottom: 0;
+  top: 5px;
+  margin: auto;
+  width: 4px;
+  height: 4px;
+  background: #999;
+  border-radius: 50%;
+}
+
+#section2 ul.album-category li a:hover {
+  color: #00999f;
+}
+
+#section2 ul.album-category li a:hover:before {
+  left: 0;
+  right: 0;
+}
+
+#section2 .list-album {
+  margin-top: 20px;
 }
 
 #section2 .list-album .one-item {
@@ -1179,7 +1262,7 @@ This class is added to the container
   margin-bottom: 15px;
 }
 
-#location #location-info .location-filter p.info {
+#location #location-info .location-filter p {
   line-height: 1.6;
   color: white;
 }

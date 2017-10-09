@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2017 at 05:51 PM
+-- Generation Time: Oct 08, 2017 at 05:09 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -30,14 +30,22 @@ CREATE TABLE `albums` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` longtext COLLATE utf8mb4_unicode_ci,
+  `path` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image_cover` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `isActive` tinyint(1) NOT NULL DEFAULT '0',
   `order` int(11) NOT NULL DEFAULT '1',
   `user_id` int(10) UNSIGNED NOT NULL,
+  `category_album_id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `path` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `albums`
+--
+
+INSERT INTO `albums` (`id`, `name`, `content`, `path`, `image_cover`, `isActive`, `order`, `user_id`, `category_album_id`, `created_at`, `updated_at`) VALUES
+(2, 'Ảnh Cưới Đức Và Ngân', NULL, 'anh-cuoi-duc-va-ngan', 'images/uploads/images/album/ducngan/NHAT4480-min.png', 1, 1, 1, 2, '2017-10-07 05:28:50', '2017-10-08 11:14:13');
 
 -- --------------------------------------------------------
 
@@ -48,9 +56,21 @@ CREATE TABLE `albums` (
 CREATE TABLE `category_albums` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `path` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `isActive` tinyint(1) NOT NULL DEFAULT '0',
+  `order` int(11) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `category_albums`
+--
+
+INSERT INTO `category_albums` (`id`, `name`, `path`, `isActive`, `order`, `created_at`, `updated_at`) VALUES
+(1, 'Phóng Sự Ngày Cưới', 'phong-su-ngay-cuoi', 1, 1, '2017-10-07 05:08:20', '2017-10-07 13:40:19'),
+(2, 'Album Ngoại Cảnh', 'album-ngoai-canh', 1, 1, '2017-10-07 05:32:11', '2017-10-07 13:40:04'),
+(3, 'Album Gia Đình - Em Bé', 'album-gia-dinh-em-be', 1, 1, '2017-10-07 13:40:41', '2017-10-07 13:40:41');
 
 -- --------------------------------------------------------
 
@@ -74,7 +94,10 @@ INSERT INTO `category_permissions` (`id`, `name`, `created_at`, `updated_at`) VA
 (2, 'User', '2017-10-03 06:54:38', '2017-10-03 06:54:38'),
 (3, 'Tin Tức', '2017-10-03 06:54:38', '2017-10-03 06:54:38'),
 (4, 'Cấu Hình', '2017-10-03 06:54:38', '2017-10-03 06:54:38'),
-(5, 'Location', '2017-10-03 13:40:42', '2017-10-03 13:40:42');
+(5, 'Location', '2017-10-03 13:40:42', '2017-10-03 13:40:42'),
+(7, 'Album', '2017-10-04 12:54:15', '2017-10-04 12:54:15'),
+(8, 'Quotation', '2017-10-07 01:38:49', '2017-10-07 01:38:49'),
+(9, 'Loại Album', '2017-10-07 03:37:37', '2017-10-07 03:37:37');
 
 -- --------------------------------------------------------
 
@@ -107,6 +130,32 @@ CREATE TABLE `images_albums` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `images_albums`
+--
+
+INSERT INTO `images_albums` (`id`, `image`, `album_id`, `created_at`, `updated_at`) VALUES
+(5, 'images/uploads/images/album/ducngan/NHAT4432-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(6, 'images/uploads/images/album/ducngan/NHAT4434-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(7, 'images/uploads/images/album/ducngan/NHAT4454-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(8, 'images/uploads/images/album/ducngan/NHAT4470-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(9, 'images/uploads/images/album/ducngan/NHAT4480-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(10, 'images/uploads/images/album/ducngan/NHAT4498-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(11, 'images/uploads/images/album/ducngan/NHAT4501-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(12, 'images/uploads/images/album/ducngan/NHAT4510-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(13, 'images/uploads/images/album/ducngan/NHAT4535-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(14, 'images/uploads/images/album/ducngan/NHAT4553-Edit-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(15, 'images/uploads/images/album/ducngan/NHAT4564-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(16, 'images/uploads/images/album/ducngan/NHAT4576-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(17, 'images/uploads/images/album/ducngan/NHAT4579-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(18, 'images/uploads/images/album/ducngan/NHAT4595-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(19, 'images/uploads/images/album/ducngan/NHAT4632-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(20, 'images/uploads/images/album/ducngan/NHAT4737-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(21, 'images/uploads/images/album/ducngan/NHAT4782-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(22, 'images/uploads/images/album/ducngan/NHAT4846-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(23, 'images/uploads/images/album/ducngan/NHAT4848-min.png', 2, '2017-10-08 11:12:33', '2017-10-08 11:12:33'),
+(24, 'images/uploads/images/album/ducngan/NHAT4859-min.png', 2, '2017-10-08 11:12:34', '2017-10-08 11:12:34');
+
 -- --------------------------------------------------------
 
 --
@@ -119,6 +168,7 @@ CREATE TABLE `locations` (
   `content` longtext COLLATE utf8mb4_unicode_ci,
   `image_cover` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image_avata` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image_mobile` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image_background` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image_mota_1` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `title_mota_1` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -136,6 +186,24 @@ CREATE TABLE `locations` (
   `path` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `locations`
+--
+
+INSERT INTO `locations` (`id`, `name`, `content`, `image_cover`, `image_avata`, `image_mobile`, `image_background`, `image_mota_1`, `title_mota_1`, `content_mota_1`, `image_mota_2`, `title_mota_2`, `content_mota_2`, `image_mota_3`, `title_mota_3`, `content_mota_3`, `isActive`, `order`, `created_at`, `updated_at`, `path`) VALUES
+(2, 'Cầu Tình Yêu', '<p>Vị tr&iacute; thuận lợi, view đẹp mắt đ&atilde; gi&uacute;p cho c&acirc;y cầu n&agrave;y c&agrave;ng ng&agrave;y c&agrave;ng hot. Kh&ocirc;ng chỉ l&agrave; điểm vui chơi, h&ograve; hẹn, cầu t&igrave;nh y&ecirc;u c&ograve;n được nhiều c&ocirc; d&acirc;u ch&uacute; rể lựa chọn ghi lại khoảnh khắc kỉ niệm trong bộ ảnh cưới</p>', 'images/uploads/images/diadiem/temp/1.jpg', 'images/uploads/images/diadiem/cautinhyeu.png', NULL, 'images/uploads/images/diadiem/temp/1.jpg', 'images/uploads/images/diadiem/temp/1.jpg', 'Nơi Chụp Ảnh Cưới Lãng Mạn', '<p>Địa Điểm L&yacute; Tưởng, Gợi Nhớ Kh&ocirc;ng Kh&iacute; N&ecirc;n Thơ Cho C&aacute;c C&acirc;u Chuyện T&igrave;nh, L&agrave; Sự Khởi Đầu Cho Một Cặp Đ&ocirc;i T&igrave;m Đến Ngưỡng Cửa H&ocirc;n Nh&acirc;n</p>', 'images/uploads/images/diadiem/temp/1.jpg', 'Ổ Khóa Tình Yêu', '<p>Kh&ocirc;ng Biết Đ&atilde; C&oacute; Bao Nhi&ecirc;u T&igrave;nh Y&ecirc;u H&igrave;nh Th&agrave;nh, Ph&aacute;t Triển Rồi Đơm Hoa Kết Tr&aacute;i Nhờ Biểu Tượng Của Sự Kết Nối, Của Gặp Gỡ V&agrave; Hạnh Ngộ N&agrave;y</p>', 'images/uploads/images/diadiem/temp/1.jpg', 'Tình Yêu Bền Chặt Của Đôi Lứa', '<p>Kh&ocirc;ng Gian S&ocirc;ng Nước Cộng Với Đ&egrave;n Thiết Kế H&igrave;nh Tr&aacute;i Tim Đỏ Sẽ Gi&uacute;p C&aacute;c Cặp Đ&ocirc;i C&oacute; Th&ecirc;m Cảm Nhận Đặc Biệt Trong Ng&agrave;y Hạnh Ph&uacute;c.</p>', 1, 2, '2017-10-04 14:18:38', '2017-10-08 13:29:33', 'cau-tinh-yeu'),
+(3, 'Đèo Hải Vân', '<p>Bối cảnh thơ mộng, thần ti&ecirc;n của đ&egrave;o Hải V&acirc;n sẽ l&agrave; một nơi tuyệt vời cho bạn chụp h&igrave;nh cưới đấy.</p>', 'images/uploads/images/album/temp/01-156.jpg', 'images/uploads/images/diadiem/deohaivan.png', NULL, 'images/uploads/images/album/temp/01-156.jpg', 'images/uploads/images/album/temp/01-156.jpg', 'Thiên Hạ Đệ Nhất Hùng Quan', '<p>Cảnh Quan Đẹp Tuyệt Vời Như Một Bức Tranh Thủy Mặc Với Một B&ecirc;n L&agrave; N&uacute;i Non H&ugrave;ng Vĩ, Một B&ecirc;n L&agrave; Biển Lăng C&ocirc; Xanh Trong Vắt</p>', 'images/uploads/images/album/temp/01-156.jpg', 'Cảnh Đẹp Núi Rừng Và Biển Cả', '<p>Tất Cả H&ograve;a Quyện V&agrave;o Nhau, Mang Lại Những H&igrave;nh Ảnh Lạ Mắt, Tinh Tế V&agrave; Độc Đ&aacute;o</p>', 'images/uploads/images/album/temp/01-156.jpg', 'Bối Cảnh Thơ Mộng, Thần Tiên', '<p>Gi&uacute;p Cả Hai C&oacute; Được Cảm X&uacute;c, Ấn Tượng L&agrave; Y&ecirc;u Cầu Tối Thiểu V&agrave; Đ&egrave;o Hải V&acirc;n Ho&agrave;n To&agrave;n Đ&aacute;p Ứng Được Ti&ecirc;u Ch&iacute; Đ&oacute;</p>', 1, 1, '2017-10-04 14:43:38', '2017-10-08 13:05:08', 'deo-hai-van'),
+(4, 'Resort', '<p>test</p>', 'images/uploads/images/diadiem/temp/1.jpg', 'images/uploads/images/diadiem/resort.png', NULL, 'images/uploads/images/diadiem/temp/1.jpg', 'images/uploads/images/diadiem/temp/1.jpg', '1', '<p>1</p>', 'images/uploads/images/diadiem/temp/1.jpg', '1', '<p>1</p>', 'images/uploads/images/diadiem/temp/1.jpg', '1', '<p>1</p>', 1, 3, '2017-10-07 13:57:48', '2017-10-08 09:45:33', 'resort'),
+(5, 'Phim Trường', '<p>1</p>', 'images/uploads/images/diadiem/temp/1.jpg', 'images/uploads/images/diadiem/phimtruong.png', NULL, 'images/uploads/images/diadiem/temp/1.jpg', 'images/uploads/images/diadiem/temp/1.jpg', '1', '<p>1</p>', 'images/uploads/images/diadiem/temp/1.jpg', '1', '<p>1</p>', 'images/uploads/images/diadiem/temp/1.jpg', '1', '<p>1</p>', 1, 4, '2017-10-07 13:58:22', '2017-10-08 09:45:54', 'phim-truong'),
+(6, 'Bãi Đá', '<p>1</p>', 'images/uploads/images/diadiem/baida.png', 'images/uploads/images/diadiem/baida.png', NULL, 'images/uploads/images/diadiem/baida.png', 'images/uploads/images/album/ducngan/NHAT4470-min.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/baida.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/baida.png', '1', '<p>1</p>', 1, 5, '2017-10-08 09:46:45', '2017-10-08 11:18:42', 'bai-da'),
+(7, 'Bà Nà', '<p>1</p>', 'images/uploads/images/diadiem/bana.png', 'images/uploads/images/diadiem/bana.png', NULL, 'images/uploads/images/diadiem/bana.png', 'images/uploads/images/diadiem/bana.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/bana.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/bana.png', '1', '<p>1</p>', 1, 6, '2017-10-08 09:47:38', '2017-10-08 09:47:38', 'ba-na'),
+(8, 'Biển Đà Nẵng', '<p>1</p>', 'images/uploads/images/diadiem/biendanang.png', 'images/uploads/images/diadiem/biendanang.png', NULL, 'images/uploads/images/diadiem/biendanang.png', 'images/uploads/images/diadiem/biendanang.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/biendanang.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/biendanang.png', '1', '<p>1</p>', 1, 7, '2017-10-08 10:08:52', '2017-10-08 10:08:52', 'bien-da-nang'),
+(9, 'Bồ Câu', '<p>1</p>', 'images/uploads/images/diadiem/bocau.png', 'images/uploads/images/diadiem/bocau.png', NULL, 'images/uploads/images/diadiem/bocau.png', 'images/uploads/images/diadiem/bocau.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/bocau.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/bocau.png', '1', '<p>1</p>', 1, 8, '2017-10-08 10:09:34', '2017-10-08 10:09:34', 'bo-cau'),
+(10, 'Đồi Chè', '<p>1</p>', 'images/uploads/images/diadiem/doiche.png', 'images/uploads/images/diadiem/doiche.png', NULL, 'images/uploads/images/diadiem/doiche.png', 'images/uploads/images/diadiem/doiche.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/doiche.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/doiche.png', '1', '<p>1</p>', 1, 9, '2017-10-08 10:11:20', '2017-10-08 10:11:20', 'doi-che'),
+(11, 'Đồi Thông', '<p>1</p>', 'images/uploads/images/diadiem/doithong.png', 'images/uploads/images/diadiem/doithong.png', NULL, 'images/uploads/images/diadiem/doithong.png', 'images/uploads/images/diadiem/doithong.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/doithong.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/doithong.png', '1', '<p>1</p>', 1, 10, '2017-10-08 10:12:05', '2017-10-08 10:12:05', 'doi-thong'),
+(12, 'Hội An', '<p>1</p>', 'images/uploads/images/diadiem/hoian.png', 'images/uploads/images/diadiem/hoian.png', NULL, 'images/uploads/images/diadiem/hoian.png', 'images/uploads/images/diadiem/hoian.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/hoian.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/hoian.png', '1', '<p>1</p>', 1, 11, '2017-10-08 10:13:14', '2017-10-08 10:13:14', 'hoi-an'),
+(13, 'Hồ Xanh', '<p>1</p>', 'images/uploads/images/diadiem/hoxanh.png', 'images/uploads/images/diadiem/hoxanh.png', NULL, 'images/uploads/images/diadiem/hoxanh.png', 'images/uploads/images/diadiem/hoxanh.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/hoxanh.png', '1', '<p>1</p>', 'images/uploads/images/diadiem/hoxanh.png', '1', '<p>1</p>', 1, 12, '2017-10-08 10:13:53', '2017-10-08 10:13:53', 'ho-xanh');
+
 -- --------------------------------------------------------
 
 --
@@ -148,6 +216,16 @@ CREATE TABLE `location_albums` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `location_albums`
+--
+
+INSERT INTO `location_albums` (`location_id`, `album_id`, `created_at`, `updated_at`) VALUES
+(6, 2, '2017-10-08 11:17:50', '2017-10-08 11:17:50'),
+(8, 2, '2017-10-08 11:12:32', '2017-10-08 11:12:32'),
+(12, 2, '2017-10-08 11:12:32', '2017-10-08 11:12:32'),
+(13, 2, '2017-10-08 11:12:32', '2017-10-08 11:12:32');
 
 -- --------------------------------------------------------
 
@@ -172,10 +250,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2017_09_08_092809_create_sliders_tables', 2),
 (5, '2017_09_08_142322_create_news_table', 2),
 (6, '2017_09_08_092701_create_configs_tables', 3),
-(7, '2017_10_03_152342_create_categoryalbums_table', 4),
 (10, '2017_10_03_153539_create_location_albums_table', 5),
 (11, '2017_10_03_154633_create_locations_albums_table', 6),
-(12, '2017_10_03_154745_create_images_albums_table', 6);
+(15, '2017_10_07_075921_create_quotations_table', 8),
+(16, '2017_10_03_152342_create_categoryalbums_table', 9),
+(17, '2017_10_03_152648_create_albums_table', 10),
+(18, '2017_10_03_154745_create_images_albums_table', 10);
 
 -- --------------------------------------------------------
 
@@ -247,7 +327,19 @@ INSERT INTO `permissions` (`id`, `name`, `display_name`, `description`, `categor
 (17, 'location-list', 'Xem Danh Sách Địa Điểm', 'Được Xem Danh Sách Địa Điểm', 5, '2017-10-03 13:40:54', '2017-10-03 13:40:54'),
 (18, 'location-create', 'Thêm Mới Địa Điểm', 'Được Thêm Mới Địa Điểm', 5, '2017-10-03 13:40:54', '2017-10-03 13:40:54'),
 (19, 'location-edit', 'Cập Nhật Địa Điểm', 'Được Cập Nhật Địa Điểm', 5, '2017-10-03 13:40:54', '2017-10-03 13:40:54'),
-(20, 'location-delete', 'Xóa Địa Điểm', 'Được Xóa Địa Điểm', 5, '2017-10-03 13:40:54', '2017-10-03 13:40:54');
+(20, 'location-delete', 'Xóa Địa Điểm', 'Được Xóa Địa Điểm', 5, '2017-10-03 13:40:54', '2017-10-03 13:40:54'),
+(21, 'album-list', 'Xem Danh Sách Album', 'Được Xem Danh SáchAlbum', 7, '2017-10-04 12:55:33', '2017-10-04 12:55:33'),
+(22, 'album-create', 'Thêm Mới Album', 'Được Thêm Mới Album', 7, '2017-10-04 12:55:33', '2017-10-04 12:55:33'),
+(23, 'album-edit', 'Cập Nhật Album', 'Được Cập Nhật Album', 7, '2017-10-04 12:55:33', '2017-10-04 12:55:33'),
+(24, 'album-delete', 'Xóa Địa Album', 'Được Xóa Album', 7, '2017-10-04 12:55:33', '2017-10-04 12:55:33'),
+(25, 'quotation-list', 'Xem Danh Sách Báo Giá', 'Được Xem Danh Sách Báo Giá', 8, '2017-10-07 01:40:03', '2017-10-07 01:40:03'),
+(26, 'quotation-create', 'Thêm Mới Báo Giá', 'Được Thêm Mới Báo Giá', 8, '2017-10-07 01:40:03', '2017-10-07 01:40:03'),
+(27, 'quotation-edit', 'Cập Nhật Báo Giá', 'Được Cập Nhật Báo Giá', 8, '2017-10-07 01:40:03', '2017-10-07 01:40:03'),
+(28, 'quotation-delete', 'Xóa Địa Báo Giá', 'Được Xóa Báo Giá', 8, '2017-10-07 01:40:03', '2017-10-07 01:40:03'),
+(29, 'categoryalbum-list', 'Xem Danh Sách Loại Album', 'Được Xem Danh Sách Loại Album', 9, '2017-10-07 03:39:24', '2017-10-07 03:39:24'),
+(30, 'categoryalbum-create', 'Thêm Mới Loại Album', 'Được Thêm Mới Loại Album', 9, '2017-10-07 03:39:24', '2017-10-07 03:39:24'),
+(31, 'categoryalbum-edit', 'Cập Nhật Loại Album', 'Được Cập Nhật Loại Album', 9, '2017-10-07 03:39:24', '2017-10-07 03:39:24'),
+(32, 'categoryalbum-delete', 'Xóa Địa Loại Album', 'Được Xóa Loại Album', 9, '2017-10-07 03:39:24', '2017-10-07 03:39:24');
 
 -- --------------------------------------------------------
 
@@ -284,7 +376,45 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (17, 1),
 (18, 1),
 (19, 1),
-(20, 1);
+(20, 1),
+(21, 1),
+(22, 1),
+(23, 1),
+(24, 1),
+(25, 1),
+(26, 1),
+(27, 1),
+(28, 1),
+(29, 1),
+(30, 1),
+(31, 1),
+(32, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quotations`
+--
+
+CREATE TABLE `quotations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `path` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` tinyint(1) NOT NULL DEFAULT '0',
+  `isActive` tinyint(1) NOT NULL DEFAULT '0',
+  `order` int(11) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `quotations`
+--
+
+INSERT INTO `quotations` (`id`, `name`, `path`, `image`, `content`, `type`, `isActive`, `order`, `created_at`, `updated_at`) VALUES
+(1, 'Quang Và Thư', 'quang-va-thu', 'images/uploads/images/1.jpg', '<p>test</p>', 0, 1, 1, '2017-10-07 01:42:30', '2017-10-07 01:44:37');
 
 -- --------------------------------------------------------
 
@@ -341,6 +471,16 @@ CREATE TABLE `sliders` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `slider_order`, `slider_is_active`, `slider_image`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'images/uploads/images/slider/2_1495620718917.jpg', '2017-10-07 13:42:58', '2017-10-07 13:43:51'),
+(2, 1, 1, 'images/uploads/images/slider/NAMZ1624bg_1495333128630.jpg', '2017-10-07 13:43:58', '2017-10-07 13:43:58'),
+(3, 1, 1, 'images/uploads/images/slider/NAMZ1778bg_1495333317878.jpg', '2017-10-07 13:44:05', '2017-10-07 13:44:05'),
+(4, 1, 1, 'images/uploads/images/slider/NAMZ1888_1495333162043.jpg', '2017-10-07 13:44:13', '2017-10-07 13:44:13');
+
 -- --------------------------------------------------------
 
 --
@@ -373,14 +513,15 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `creat
 --
 ALTER TABLE `albums`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `albums_user_id_foreign` (`user_id`);
+  ADD KEY `albums_user_id_foreign` (`user_id`),
+  ADD KEY `albums_category_album_id_foreign` (`category_album_id`);
 
 --
 -- Indexes for table `category_albums`
 --
 ALTER TABLE `category_albums`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `categoryalbums_name_unique` (`name`);
+  ADD UNIQUE KEY `category_albums_name_unique` (`name`);
 
 --
 -- Indexes for table `category_permissions`
@@ -450,6 +591,12 @@ ALTER TABLE `permission_role`
   ADD KEY `permission_role_role_id_foreign` (`role_id`);
 
 --
+-- Indexes for table `quotations`
+--
+ALTER TABLE `quotations`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
@@ -484,17 +631,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `category_albums`
 --
 ALTER TABLE `category_albums`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `category_permissions`
 --
 ALTER TABLE `category_permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `configs`
 --
@@ -504,17 +651,17 @@ ALTER TABLE `configs`
 -- AUTO_INCREMENT for table `images_albums`
 --
 ALTER TABLE `images_albums`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `news`
 --
@@ -524,7 +671,12 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+--
+-- AUTO_INCREMENT for table `quotations`
+--
+ALTER TABLE `quotations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `roles`
 --
@@ -534,7 +686,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `users`
 --
@@ -548,6 +700,7 @@ ALTER TABLE `users`
 -- Constraints for table `albums`
 --
 ALTER TABLE `albums`
+  ADD CONSTRAINT `albums_category_album_id_foreign` FOREIGN KEY (`category_album_id`) REFERENCES `category_albums` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `albums_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --

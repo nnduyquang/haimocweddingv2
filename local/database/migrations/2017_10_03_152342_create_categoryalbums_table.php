@@ -13,9 +13,12 @@ class CreateCategoryalbumsTable extends Migration
      */
     public function up()
     {
-        Schema::create('categoryalbums', function (Blueprint $table) {
+        Schema::create('category_albums', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
+            $table->string('path');
+            $table->boolean('isActive')->default(0);
+            $table->integer('order')->default(1);
             $table->timestamps();
         });
     }

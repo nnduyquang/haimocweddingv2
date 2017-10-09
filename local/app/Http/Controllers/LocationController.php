@@ -14,7 +14,7 @@ class LocationController extends Controller
      */
     public function index(Request $request)
     {
-        $locations = Location::orderBy('id', 'DESC')->paginate(5);
+        $locations = Location::orderBy('order', 'ASC')->paginate(5);
         return view('backend.admin.location.index', compact('locations'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }

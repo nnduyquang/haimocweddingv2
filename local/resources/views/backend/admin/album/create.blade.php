@@ -28,10 +28,20 @@
     @endif
     {!! Form::open(array('route' => 'album.store','method'=>'POST','id'=>'formThem')) !!}
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="form-group">
                 <strong>Tên Album:</strong>
                 {!! Form::text('name', null, array('placeholder' => 'Tiêu Đề','class' => 'form-control')) !!}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <strong>Loại Album:</strong><br>
+                @foreach($categoryAlbums as $key=>$data)
+                    <div class="col-md-12">
+                        {{ Form::radio('idCategoryAlbum', $data->id) }}{{ $data->name}}</br>
+                    </div>
+                @endforeach
             </div>
         </div>
         <div class="col-md-12">

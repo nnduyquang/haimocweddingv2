@@ -24,6 +24,9 @@ class CreateAlbumsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('category_album_id')->unsigned();
+            $table->foreign('category_album_id')->references('id')->on('category_albums')
+                ->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

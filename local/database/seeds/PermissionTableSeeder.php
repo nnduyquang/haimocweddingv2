@@ -137,29 +137,77 @@ class PermissionTableSeeder extends Seeder
 //                'description' => 'Được Xóa Địa Điểm',
 //                'category_permission_id'=>5
 //            ]
+//            [
+//                'name' => 'album-list',
+//                'display_name' => 'Xem Danh Sách Album',
+//                'description' => 'Được Xem Danh SáchAlbum',
+//                'category_permission_id'=>6
+//            ],
+//            [
+//                'name' => 'album-create',
+//                'display_name' => 'Thêm Mới Album',
+//                'description' => 'Được Thêm Mới Album',
+//                'category_permission_id'=>6
+//            ],
+//            [
+//                'name' => 'album-edit',
+//                'display_name' => 'Cập Nhật Album',
+//                'description' => 'Được Cập Nhật Album',
+//                'category_permission_id'=>6
+//            ],
+//            [
+//                'name' => 'album-delete',
+//                'display_name' => 'Xóa Địa Album',
+//                'description' => 'Được Xóa Album',
+//                'category_permission_id'=>6
+//            ]
+//            [
+//                'name' => 'quotation-list',
+//                'display_name' => 'Xem Danh Sách Báo Giá',
+//                'description' => 'Được Xem Danh Sách Báo Giá',
+//                'category_permission_id'=>8
+//            ],
+//            [
+//                'name' => 'quotation-create',
+//                'display_name' => 'Thêm Mới Báo Giá',
+//                'description' => 'Được Thêm Mới Báo Giá',
+//                'category_permission_id'=>8
+//            ],
+//            [
+//                'name' => 'quotation-edit',
+//                'display_name' => 'Cập Nhật Báo Giá',
+//                'description' => 'Được Cập Nhật Báo Giá',
+//                'category_permission_id'=>8
+//            ],
+//            [
+//                'name' => 'quotation-delete',
+//                'display_name' => 'Xóa Địa Báo Giá',
+//                'description' => 'Được Xóa Báo Giá',
+//                'category_permission_id'=>8
+//            ],
             [
-                'name' => 'album-list',
-                'display_name' => 'Xem Danh Sách Album',
-                'description' => 'Được Xem Danh SáchAlbum',
-                'category_permission_id'=>6
+                'name' => 'categoryalbum-list',
+                'display_name' => 'Xem Danh Sách Loại Album',
+                'description' => 'Được Xem Danh Sách Loại Album',
+                'category_permission_id'=>9
             ],
             [
-                'name' => 'album-create',
-                'display_name' => 'Thêm Mới Album',
-                'description' => 'Được Thêm Mới Album',
-                'category_permission_id'=>6
+                'name' => 'categoryalbum-create',
+                'display_name' => 'Thêm Mới Loại Album',
+                'description' => 'Được Thêm Mới Loại Album',
+                'category_permission_id'=>9
             ],
             [
-                'name' => 'album-edit',
-                'display_name' => 'Cập Nhật Album',
-                'description' => 'Được Cập Nhật Album',
-                'category_permission_id'=>6
+                'name' => 'categoryalbum-edit',
+                'display_name' => 'Cập Nhật Loại Album',
+                'description' => 'Được Cập Nhật Loại Album',
+                'category_permission_id'=>9
             ],
             [
-                'name' => 'album-delete',
-                'display_name' => 'Xóa Địa Album',
-                'description' => 'Được Xóa Album',
-                'category_permission_id'=>6
+                'name' => 'categoryalbum-delete',
+                'display_name' => 'Xóa Địa Loại Album',
+                'description' => 'Được Xóa Loại Album',
+                'category_permission_id'=>9
             ]
 
         ];

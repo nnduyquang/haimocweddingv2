@@ -242,10 +242,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     @endif
                     <li><a href="{{ route('news.index') }}"><i class="fa fa-link"></i> <span>Tin Tức</span></a></li>
                     <li><a href="{{ route('location.index') }}"><i class="fa fa-link"></i> <span>Địa Điểm</span></a></li>
+                    <li><a href="{{ route('categoryalbum.index') }}"><i class="fa fa-link"></i> <span>Loại Album</span></a></li>
                     <li><a href="{{ route('album.index') }}"><i class="fa fa-link"></i> <span>Album</span></a></li>
-                    <li><a href="#"><i class="fa fa-link"></i> <span>Báo Giá</span></a></li>
+                    <li><a href="{{ route('quotation.index') }}"><i class="fa fa-link"></i> <span>Báo Giá</span></a></li>
                     <li><a href="{{ route('config.slider.index') }}"><i class="fa fa-link"></i> <span>Slider</span></a></li>
-
                 </ul>
 
             </ul>

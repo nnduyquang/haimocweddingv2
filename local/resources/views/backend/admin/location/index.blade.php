@@ -51,6 +51,7 @@
         <tr>
             <th>TT</th>
             <th>Tên Địa Điểm</th>
+            <th>Sắp Xếp</th>
             <th>Ngày Đăng</th>
             <th>Ngày Cập Nhật</th>
             <th>Tình Trạng</th>
@@ -59,6 +60,7 @@
         @foreach ($locations as $key => $data)
             <td>{{ ++$i }}</td>
             <td>{{ $data->name }}</td>
+            <td>{{ $data->order }}</td>
             <td>{{ $data->created_at }}</td>
             <td>{{ $data->updated_at }}</td>
             <td>{{$data->isActive}}</td>
