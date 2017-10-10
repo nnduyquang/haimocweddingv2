@@ -14,25 +14,22 @@
 //Route::get('/', function () {
 //    return view('frontend.trangchu.index');
 //});
-Route::get('/','FETrangChuController@getAllInfo');
+Route::get('/', 'FETrangChuController@getAllInfo');
 //Route::get('/album', function () {
 //    return view('frontend.album.index');
 //});
-Route::get('/album/{pathCategory}','FEAlbumController@getAlbumsByCategory');
+Route::get('/gioi-thieu', 'PostController@getContentGioiThieu');
+Route::get('/album/{pathCategory}', 'FEAlbumController@getAlbumsByCategory');
 //Route::get('/dia-diem', function () {
 //    return view('frontend.location.index');
 //});
 Route::get('/dia-diem/{pathLocation}', 'FELocationController@getLocationInfo');
-Route::get('/bao-gia', function () {
-    return view('frontend.baogia.index');
-});
-Route::get('/bao-gia/chi-tiet', function () {
-    return view('frontend.baogia.chitietbaogia.index');
-});
+Route::get('/bao-gia', 'QuotationController@getAllQuotations');
+Route::get('/bao-gia/{path}', 'QuotationController@getDetailQuotation');
 //Route::get('/album/chi-tiet', function () {
 //    return view('frontend.album.chitietalbum.index');
 //});
-Route::get('album/{pathCategoryAlbum}/{pathAlbum}','FEAlbumController@getDetail');
+Route::get('album/{pathCategoryAlbum}/{pathAlbum}', 'FEAlbumController@getDetail');
 Route::get('/sml_login', function () {
     return view('backend.login.login1');
 });
@@ -66,6 +63,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('sml_admin/news/{id}/edit', ['as' => 'news.edit', 'uses' => 'NewsController@edit', 'middleware' => ['permission:news-edit']]);
     Route::patch('sml_admin/news/{id}', ['as' => 'news.update', 'uses' => 'NewsController@update', 'middleware' => ['permission:news-edit']]);
     Route::delete('sml_admin/news/{id}', ['as' => 'news.destroy', 'uses' => 'NewsController@destroy', 'middleware' => ['permission:news-delete']]);
+
+    //POST
+    Route::get('sml_admin/post', ['as' => 'post.index', 'uses' => 'PostController@index', 'middleware' => ['permission:post-list|post-create|post-edit|post-delete']]);
+    Route::post('sml_admin/post/create', ['as' => 'post.store', 'uses' => 'PostController@store', 'middleware' => ['permission:post-create']]);
+    Route::post('sml_admin/post', ['as' => 'post.search', 'uses' => 'PostController@search']);
+    Route::get('sml_admin/post/create', ['as' => 'post.create', 'uses' => 'PostController@create', 'middleware' => ['permission:post-create']]);
+    Route::get('sml_admin/post/{id}/edit', ['as' => 'post.edit', 'uses' => 'PostController@edit', 'middleware' => ['permission:post-edit']]);
+    Route::patch('sml_admin/post/{id}', ['as' => 'post.update', 'uses' => 'PostController@update', 'middleware' => ['permission:post-edit']]);
+    Route::delete('sml_admin/post/{id}', ['as' => 'post.destroy', 'uses' => 'PostController@destroy', 'middleware' => ['permission:post-delete']]);
 
     //LOCATION
     Route::get('sml_admin/dia-diem', ['as' => 'location.index', 'uses' => 'LocationController@index', 'middleware' => ['permission:location-list|location-create|location-edit|location-delete']]);
@@ -101,8 +107,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('sml_admin/bao-gia/{id}/edit', ['as' => 'quotation.edit', 'uses' => 'QuotationController@edit', 'middleware' => ['permission:quotation-edit']]);
     Route::patch('sml_admin/bao-gia/{id}', ['as' => 'quotation.update', 'uses' => 'QuotationController@update', 'middleware' => ['permission:quotation-edit']]);
     Route::delete('sml_admin/bao-gia/{id}', ['as' => 'quotation.destroy', 'uses' => 'QuotationController@destroy', 'middleware' => ['permission:quotation-delete']]);
-
-
 
 
     //CONFIG

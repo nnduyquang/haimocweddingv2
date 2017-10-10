@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2017 at 11:28 AM
+-- Generation Time: Oct 10, 2017 at 11:22 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -98,7 +98,8 @@ INSERT INTO `category_permissions` (`id`, `name`, `created_at`, `updated_at`) VA
 (5, 'Location', '2017-10-03 13:40:42', '2017-10-03 13:40:42'),
 (7, 'Album', '2017-10-04 12:54:15', '2017-10-04 12:54:15'),
 (8, 'Quotation', '2017-10-07 01:38:49', '2017-10-07 01:38:49'),
-(9, 'Loại Album', '2017-10-07 03:37:37', '2017-10-07 03:37:37');
+(9, 'Loại Album', '2017-10-07 03:37:37', '2017-10-07 03:37:37'),
+(10, 'Bài Viết', '2017-10-10 02:36:55', '2017-10-10 02:36:55');
 
 -- --------------------------------------------------------
 
@@ -295,10 +296,18 @@ CREATE TABLE `news` (
   `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `isPost` tinyint(1) NOT NULL DEFAULT '0',
   `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `category_post_id` int(10) UNSIGNED NOT NULL DEFAULT '1',
   `user_id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `path`, `content`, `isPost`, `image`, `category_post_id`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'Giới Thiệu', 'gioi-thieu', '<h2 style="margin-left:0px; margin-right:0px; text-align:center"><span style="font-size:30px"><span style="font-family:helveticaneuelight"><strong><span style="color:#333333"><em><span style="background-color:#ffffff">Hải Mộc Wedding</span></em></span></strong></span></span></h2>\r\n\r\n<div class="container" style="-webkit-text-stroke-width:0px; border:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:0px; padding:0px 15px; text-align:start; width:1170px">\r\n<div class="p-authentic-photo__description" style="border:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; margin-top:15px; padding:0px; text-align:justify">\r\n<p style="margin-left:0px; margin-right:0px"><span style="font-size:13px"><em><span style="font-family:helveticaneuelight"><span style="color:#333333"><span style="background-color:#ffffff"><span style="font-size:15px"><span style="font-family:inherit"><span style="color:#616161"><span style="font-size:inherit"><span style="font-family:inherit"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#555555">Đ&aacute;m cưới l&agrave; khởi đầu cho một chặng đường mới của c&aacute;c đ&ocirc;i uy&ecirc;n ương, v&igrave; thế lựa chọn dịch vụ cho ng&agrave;y trọng đại của cuộc đời l&agrave; rất quan trọng.&nbsp;<strong>Hải Mộc Wedding</strong>&nbsp;tự h&agrave;o l&agrave; một trong những&nbsp;<strong>nh&agrave; cung cấp dịch vụ cưới trọn g&oacute;i h&agrave;ng đầu, gi&aacute; cả phải chăng nhất</strong>&nbsp;hiện nay. Bởi v&igrave; ngo&agrave;i kỹ năng, nghiệp vụ chuy&ecirc;n nghiệp, phong c&aacute;ch phục vụ chu đ&aacute;o ch&iacute;nh &nbsp;l&agrave; yếu tố ch&uacute;ng t&ocirc;i lu&ocirc;n đặt l&ecirc;n h&agrave;ng đầu. Ch&uacute;ng t&ocirc;i lu&ocirc;n coi đ&aacute;m cưới của kh&aacute;ch h&agrave;ng l&agrave; một sự kiện quan trọng kh&ocirc;ng chỉ của c&ocirc; d&acirc;u - ch&uacute; rể m&agrave; c&ograve;n của ch&iacute;nh những th&agrave;nh vi&ecirc;n&nbsp;<strong>Hải Mộc Wedding</strong>, bởi&nbsp;<strong>Hải Mộc</strong>&nbsp;hiểu mỗi đ&aacute;m cưới l&agrave; &ldquo;duy nhất&rdquo;!</span></span></span></span></span></span></span></span></span></span></span></em></span></p>\r\n\r\n<p style="margin-left:0px; margin-right:0px">&nbsp;</p>\r\n\r\n<p style="margin-left:0px; margin-right:0px; text-align:justify"><span style="font-size:13px"><span style="font-family:helveticaneuelight"><span style="color:#333333"><span style="background-color:#ffffff"><span style="font-size:15px"><span style="font-family:inherit"><span style="color:#616161"><span style="font-size:inherit"><span style="font-family:inherit"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#555555">H&atilde;y đến với&nbsp;<strong>Hải Mộc Wedding</strong>, kể cho ch&uacute;ng t&ocirc;i nghe c&acirc;u chuyện t&igrave;nh y&ecirc;u v&agrave; chia sẻ dự định cưới sắp tới của hai bạn. Ch&uacute;ng t&ocirc;i sẽ c&ugrave;ng bạn l&agrave;m n&ecirc;n một ng&agrave;y trọng đại thật &yacute; nghĩa với những dịch vụ tốt nhất, chăm ch&uacute;t ho&agrave;n hảo đến từng chi tiết.</span></span></span></span></span></span></span></span></span></span></span></span></p>\r\n\r\n<p style="margin-left:0px; margin-right:0px; text-align:justify">&nbsp;</p>\r\n\r\n<p style="margin-left:0px; margin-right:0px; text-align:justify"><span style="font-size:13px"><span style="font-family:helveticaneuelight"><span style="color:#333333"><span style="background-color:#ffffff"><span style="font-size:15px"><span style="font-family:inherit"><span style="color:#616161"><span style="font-size:inherit"><span style="font-family:inherit"><strong><em><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#555555">C&aacute;c dịch vụ cưới tại&nbsp;Hải Mộc Wedding&nbsp;gồm:</span></span></span></em></strong></span></span></span></span></span></span></span></span></span></p>\r\n\r\n<p style="margin-left:36pt; margin-right:0cm"><span style="font-size:13px"><span style="font-family:helveticaneuelight"><span style="color:#333333"><span style="background-color:#ffffff"><span style="font-size:15px"><span style="font-family:inherit"><span style="color:#616161"><span style="font-size:inherit"><span style="font-family:inherit"><span style="font-size:13pt"><span style="font-family:Wingdings"><span style="color:#555555">&uuml;</span></span></span><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#555555">Chụp h&igrave;nh cưới</span></span></span></span></span></span></span></span></span></span></span></span></p>\r\n\r\n<p style="margin-left:36pt; margin-right:0cm"><span style="font-size:13px"><span style="font-family:helveticaneuelight"><span style="color:#333333"><span style="background-color:#ffffff"><span style="font-size:15px"><span style="font-family:inherit"><span style="color:#616161"><span style="font-size:inherit"><span style="font-family:inherit"><span style="font-size:13pt"><span style="font-family:Wingdings"><span style="color:#555555">&uuml;</span></span></span><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#555555">Trọn g&oacute;i ng&agrave;y cưới</span></span></span></span></span></span></span></span></span></span></span></span></p>\r\n\r\n<p style="margin-left:36pt; margin-right:0cm"><span style="font-size:13px"><span style="font-family:helveticaneuelight"><span style="color:#333333"><span style="background-color:#ffffff"><span style="font-size:15px"><span style="font-family:inherit"><span style="color:#616161"><span style="font-size:inherit"><span style="font-family:inherit"><span style="font-size:13pt"><span style="font-family:Wingdings"><span style="color:#555555">&uuml;</span></span></span><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#555555">&Aacute;o cưới</span></span></span></span></span></span></span></span></span></span></span></span></p>\r\n\r\n<p style="margin-left:36pt; margin-right:0cm"><span style="font-size:13px"><span style="font-family:helveticaneuelight"><span style="color:#333333"><span style="background-color:#ffffff"><span style="font-size:15px"><span style="font-family:inherit"><span style="color:#616161"><span style="font-size:inherit"><span style="font-family:inherit"><span style="font-size:13pt"><span style="font-family:Wingdings"><span style="color:#555555">&uuml;</span></span></span><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#555555">Trang điểm c&ocirc; d&acirc;u</span></span></span></span></span></span></span></span></span></span></span></span></p>\r\n\r\n<p style="margin-left:36pt; margin-right:0cm"><span style="font-size:13px"><span style="font-family:helveticaneuelight"><span style="color:#333333"><span style="background-color:#ffffff"><span style="font-size:15px"><span style="font-family:inherit"><span style="color:#616161"><span style="font-size:inherit"><span style="font-family:inherit"><span style="font-size:13pt"><span style="font-family:Wingdings"><span style="color:#555555">&uuml;</span></span></span><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#555555">Tư vấn cưới</span></span></span></span></span></span></span></span></span></span></span></span></p>\r\n\r\n<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:13px"><span style="font-family:helveticaneuelight"><span style="color:#333333"><span style="background-color:#ffffff"><span style="font-size:15px"><span style="font-family:inherit"><span style="color:#616161"><span style="font-size:inherit"><span style="font-family:inherit"><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#555555">v&agrave; những dịch vụ cưới đi k&egrave;m kh&aacute;c...</span></span></span></span></span></span></span></span></span></span></span></span></p>\r\n\r\n<p style="margin-left:0px; margin-right:0px">&nbsp;</p>\r\n\r\n<p style="margin-left:0px; margin-right:0px; text-align:justify"><span style="font-size:13px"><span style="font-family:helveticaneuelight"><span style="color:#333333"><span style="background-color:#ffffff"><span style="font-size:15px"><span style="font-family:inherit"><span style="color:#616161"><span style="font-size:inherit"><span style="font-family:inherit"><strong><em><span style="font-size:13pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#555555">Hải Mộc Wedding lu&ocirc;n l&agrave;m bạn thật đẹp v&agrave; hạnh ph&uacute;c trong ng&agrave;y trọng đại!</span></span></span></em></strong></span></span></span></span></span></span></span></span></span></p>\r\n</div>\r\n</div>', 1, 'images/uploads/images/album/ducngan/NHAT4859-min.png', 2, 1, '2017-10-10 02:57:16', '2017-10-10 02:57:16');
 
 -- --------------------------------------------------------
 
@@ -364,7 +373,11 @@ INSERT INTO `permissions` (`id`, `name`, `display_name`, `description`, `categor
 (29, 'categoryalbum-list', 'Xem Danh Sách Loại Album', 'Được Xem Danh Sách Loại Album', 9, '2017-10-07 03:39:24', '2017-10-07 03:39:24'),
 (30, 'categoryalbum-create', 'Thêm Mới Loại Album', 'Được Thêm Mới Loại Album', 9, '2017-10-07 03:39:24', '2017-10-07 03:39:24'),
 (31, 'categoryalbum-edit', 'Cập Nhật Loại Album', 'Được Cập Nhật Loại Album', 9, '2017-10-07 03:39:24', '2017-10-07 03:39:24'),
-(32, 'categoryalbum-delete', 'Xóa Địa Loại Album', 'Được Xóa Loại Album', 9, '2017-10-07 03:39:24', '2017-10-07 03:39:24');
+(32, 'categoryalbum-delete', 'Xóa Địa Loại Album', 'Được Xóa Loại Album', 9, '2017-10-07 03:39:24', '2017-10-07 03:39:24'),
+(33, 'post-list', 'Xem Danh Sách Bài Viết', 'Được Xem Danh Sách Bài Viết', 10, '2017-10-10 02:38:27', '2017-10-10 02:38:27'),
+(34, 'post-create', 'Thêm Mới Bài Viết', 'Được Thêm Mới Bài Viết', 10, '2017-10-10 02:38:27', '2017-10-10 02:38:27'),
+(35, 'post-edit', 'Cập Nhật Bài Viết', 'Được Cập Nhật Bài Viết', 10, '2017-10-10 02:38:27', '2017-10-10 02:38:27'),
+(36, 'post-delete', 'Xóa Địa Bài Viết', 'Được Xóa Bài Viết', 10, '2017-10-10 02:38:27', '2017-10-10 02:38:27');
 
 -- --------------------------------------------------------
 
@@ -413,7 +426,11 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (29, 1),
 (30, 1),
 (31, 1),
-(32, 1);
+(32, 1),
+(33, 1),
+(34, 1),
+(35, 1),
+(36, 1);
 
 -- --------------------------------------------------------
 
@@ -425,6 +442,7 @@ CREATE TABLE `quotations` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `path` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image_cover` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` tinyint(1) NOT NULL DEFAULT '0',
@@ -438,8 +456,8 @@ CREATE TABLE `quotations` (
 -- Dumping data for table `quotations`
 --
 
-INSERT INTO `quotations` (`id`, `name`, `path`, `image`, `content`, `type`, `isActive`, `order`, `created_at`, `updated_at`) VALUES
-(1, 'Quang Và Thư', 'quang-va-thu', 'images/uploads/images/1.jpg', '<p>test</p>', 0, 1, 1, '2017-10-07 01:42:30', '2017-10-07 01:44:37');
+INSERT INTO `quotations` (`id`, `name`, `path`, `image_cover`, `image`, `content`, `type`, `isActive`, `order`, `created_at`, `updated_at`) VALUES
+(1, 'Quang Và Thư', 'quang-va-thu', 'images/uploads/images/album/ducngan/NHAT4564-min.png', 'images/uploads/images/1.jpg', '<p>test</p>', 0, 1, 1, '2017-10-07 01:42:30', '2017-10-10 03:49:32');
 
 -- --------------------------------------------------------
 
@@ -666,7 +684,7 @@ ALTER TABLE `category_albums`
 -- AUTO_INCREMENT for table `category_permissions`
 --
 ALTER TABLE `category_permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `configs`
 --
@@ -691,12 +709,12 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT for table `quotations`
 --

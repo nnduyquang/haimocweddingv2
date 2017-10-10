@@ -19,13 +19,16 @@
                                 <div class="menu-bottom-info">
                                     <div class="row">
                                         <ul class="menu-boottom-info-left">
-                                            <li><a href="">Giới Thiệu</a></li>
+                                            <li><a href="{{URL::to('gioi-thieu')}}">Giới Thiệu</a></li>
                                             <li class="has-item-down"><a href="#">Album</a>
                                                 <ul>
-                                                    <li><a href="{{URL::to('album/album-ngoai-canh')}}">Album Ngoại Cảnh</a></li>
-                                                    <li><a href="{{URL::to('album/phong-su-ngay-cuoi')}}">Phóng Sự Ngày Cưới</a>
+                                                    <li><a href="{{URL::to('album/album-ngoai-canh')}}">Album Ngoại
+                                                            Cảnh</a></li>
+                                                    <li><a href="{{URL::to('album/phong-su-ngay-cuoi')}}">Phóng Sự Ngày
+                                                            Cưới</a>
                                                     </li>
-                                                    <li><a href="{{URL::to('album/album-gia-dinh-em-be')}}">Album Gia Đình - Em Bé</a></li>
+                                                    <li><a href="{{URL::to('album/album-gia-dinh-em-be')}}">Album Gia
+                                                            Đình - Em Bé</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="">Áo Cưới</a></li>
@@ -39,7 +42,9 @@
                                 </div>
                             </div>
                             <div class="logo">
-                                {{ Html::image('images/logo/logo_office_2.png','',array('class'=>'')) }}
+                                <a href="{{URL::to('/')}}">
+                                    {{ Html::image('images/logo/logo_office_2.png','',array('class'=>'')) }}
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -17,7 +17,7 @@ class NewsController extends Controller
      */
     public function index(Request $request)
     {
-        $news = News::orderBy('id', 'DESC')->paginate(5);
+        $news = News::where('category_post_id','=',1)->orderBy('id', 'DESC')->paginate(5);
         return view('backend.admin.news.index', compact('news'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
@@ -55,6 +55,7 @@ class NewsController extends Controller
         $news->path = chuyen_chuoi_thanh_path($title);
         $news->content = $content;
         $news->image = $image;
+        $news->category_post_id=1;
         $news->user_id = Auth::user()->id;
         $news->save();
         return redirect()->route('news.index')
@@ -109,6 +110,7 @@ class NewsController extends Controller
         $news->content = $content;
         $news->image = $image;
         $news->path = chuyen_chuoi_thanh_path($title);
+        $news->category_post_id=1;
         $news->user_id = Auth::user()->id;
         $news->save();
         return redirect()->route('news.index')
@@ -132,7 +134,7 @@ class NewsController extends Controller
     public function search(Request $request)
     {
         $keywords = preg_replace('/\s+/', ' ', $request->input('txtSearch'));
-        $news = News::where('title', 'like', '%' . $keywords . '%')->orderBy('id', 'DESC')->paginate(5);
+        $news = News::where('title', 'like', '%' . $keywords . '%')->where('category_post_id','=',1)->orderBy('id', 'DESC')->paginate(5);
         return view('backend.admin.news.index', compact('news', 'keywords'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }

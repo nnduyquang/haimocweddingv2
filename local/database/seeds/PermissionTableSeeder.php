@@ -185,29 +185,53 @@ class PermissionTableSeeder extends Seeder
 //                'description' => 'Được Xóa Báo Giá',
 //                'category_permission_id'=>8
 //            ],
+//            [
+//                'name' => 'categoryalbum-list',
+//                'display_name' => 'Xem Danh Sách Loại Album',
+//                'description' => 'Được Xem Danh Sách Loại Album',
+//                'category_permission_id'=>9
+//            ],
+//            [
+//                'name' => 'categoryalbum-create',
+//                'display_name' => 'Thêm Mới Loại Album',
+//                'description' => 'Được Thêm Mới Loại Album',
+//                'category_permission_id'=>9
+//            ],
+//            [
+//                'name' => 'categoryalbum-edit',
+//                'display_name' => 'Cập Nhật Loại Album',
+//                'description' => 'Được Cập Nhật Loại Album',
+//                'category_permission_id'=>9
+//            ],
+//            [
+//                'name' => 'categoryalbum-delete',
+//                'display_name' => 'Xóa Địa Loại Album',
+//                'description' => 'Được Xóa Loại Album',
+//                'category_permission_id'=>9
+//            ]
             [
-                'name' => 'categoryalbum-list',
-                'display_name' => 'Xem Danh Sách Loại Album',
-                'description' => 'Được Xem Danh Sách Loại Album',
-                'category_permission_id'=>9
+                'name' => 'post-list',
+                'display_name' => 'Xem Danh Sách Bài Viết',
+                'description' => 'Được Xem Danh Sách Bài Viết',
+                'category_permission_id'=>10
             ],
             [
-                'name' => 'categoryalbum-create',
-                'display_name' => 'Thêm Mới Loại Album',
-                'description' => 'Được Thêm Mới Loại Album',
-                'category_permission_id'=>9
+                'name' => 'post-create',
+                'display_name' => 'Thêm Mới Bài Viết',
+                'description' => 'Được Thêm Mới Bài Viết',
+                'category_permission_id'=>10
             ],
             [
-                'name' => 'categoryalbum-edit',
-                'display_name' => 'Cập Nhật Loại Album',
-                'description' => 'Được Cập Nhật Loại Album',
-                'category_permission_id'=>9
+                'name' => 'post-edit',
+                'display_name' => 'Cập Nhật Bài Viết',
+                'description' => 'Được Cập Nhật Bài Viết',
+                'category_permission_id'=>10
             ],
             [
-                'name' => 'categoryalbum-delete',
-                'display_name' => 'Xóa Địa Loại Album',
-                'description' => 'Được Xóa Loại Album',
-                'category_permission_id'=>9
+                'name' => 'post-delete',
+                'display_name' => 'Xóa Địa Bài Viết',
+                'description' => 'Được Xóa Bài Viết',
+                'category_permission_id'=>10
             ]
 
         ];

@@ -54,6 +54,7 @@ mix.styles([
     .styles([
         'resources/assets/js/ulti.js',
         'resources/assets/js/be.news.js',
+        'resources/assets/js/be.post.js',
         'resources/assets/js/be.location.js',
         'resources/assets/js/be.album.js',
         'resources/assets/js/be.quotation.js',

@@ -47,6 +47,21 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <div class="form-inline">
+                    <span>Hình Cover: </span>
+                    {!! Form::text('image_cover', null, array('class' => 'form-control','id'=>'pathQuotationCover')) !!}
+                    {!! Form::button('Browses', array('id' => 'btnBrowseQuotationsCover','class'=>'btn btn-primary')) !!}
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                {{ Html::image('','',array('id'=>'showHinhQuotationCover','class'=>'showHinhQuotationCover'))}}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <div class="form-inline">
                     <span>Báo Giá: </span>
                     {!! Form::text('image', null, array('class' => 'form-control','id'=>'pathQuotation')) !!}
                     {!! Form::button('Browses', array('id' => 'btnBrowseQuotations','class'=>'btn btn-primary')) !!}

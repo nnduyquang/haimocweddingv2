@@ -34,8 +34,11 @@ class CategoryPermissionsSeeder extends Seeder
 //            [
 //                'name' => 'Quotation', //
 //            ],
+//            [
+//                'name' => 'Loại Album', //
+//            ],
             [
-                'name' => 'Loại Album', //
+                'name' => 'Bài Viết', //
             ],
 
         ];

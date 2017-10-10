@@ -4,7 +4,7 @@
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>SaiGon Intela</title>
+    <title>Hải Mộc Wedding</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -29,12 +29,9 @@
 
     <div id="wrap-container" class="col-md-12">
         <div class="row">
-            <div class="container main-wrap">
-                <div class="row">
+            {{--<div class="container main-wrap">--}}
                     @yield('container')
-
-                </div>
-            </div>
+            {{--</div>--}}
             @include('frontend.footer.index')
         </div>
     </div>

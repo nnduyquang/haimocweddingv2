@@ -1,5 +1,5 @@
-if ($('#content-news').length) {
-    CKEDITOR.replace('content-news', {
+if ($('#content-post').length) {
+    CKEDITOR.replace('content', {
         height: 800,
         language: 'vi',
         format_tags: 'p;h1;h2;h3;pre',
@@ -12,26 +12,41 @@ if ($('#content-news').length) {
     })
     ;
 }
-if ($('#btnBrowse').length) {
-    var button1 = document.getElementById('btnBrowse');
+// if ($('#content-news-edit').length) {
+//     CKEDITOR.replace('content-news', {
+//         height: 800,
+//         language: 'vi',
+//         format_tags: 'p;h1;h2;h3;pre',
+//         filebrowserBrowseUrl: '../../../js/kcfinder/browse.php?type=files',
+//         filebrowserImageBrowseUrl: '../../../js/kcfinder/browse.php?type=images',
+//         filebrowserFlashBrowseUrl: '../../../js/kcfinder/browse.php?type=flash',
+//         filebrowserUploadUrl: '../../../js/kcfinder/upload.php?type=files',
+//         filebrowserImageUploadUrl: '../../../js/kcfinder/upload.php?type=images',
+//         filebrowserFlashUploadUrl: '../../../js/kcfinder/upload.php?type=flash'
+//     })
+//     ;
+// }
+if ($('#btnBrowsePost').length) {
+    var button1 = document.getElementById('btnBrowsePost');
 
     button1.onclick = function () {
-        selectFileWithCKFinder('path','showHinhDaiDien');
+        selectFileWithCKFinder('pathPost','showHinhDaiDienPost');
     }
 }
 ;
-if ($('#path').val() == '')
-    $('#showHinhDaiDien').hide();
+if ($('#pathPost').val() == '')
+    $('#showHinhDaiDienPost').hide();
 else
-    $('#showHinhDaiDien').show();
+    $('#showHinhDaiDienPost').show();
 
 // function selectFileWithCKFinder(elementId) {
 //     window.KCFinder = {
 //         callBack: function (url) {
 //             var output = document.getElementById(elementId);
 //             output.value = url;
-//             $('#showHinhDaiDien').show();
-//             $('#showHinhDaiDien').fadeIn("fast").attr('src', url);
+//             alert(url);
+//             $('#showHinhDaiDienPost').show();
+//             $('#showHinhDaiDienPost').fadeIn("fast").attr('src', url);
 //             window.KCFinder = null;
 //         }
 //     };
@@ -41,10 +56,10 @@ else
 //     );
 // }
 
-$('#btnSearchTinTuc').click(function () {
+$('#btnSearchPost').click(function () {
     if ($('#txtSearch').val().trim() == '')
         return;
     if ($('#txtSearch').val().trim().replace(/ +(?= )/g, '') == $("input[name='hdKeyword']").val())
         return;
-    $('#formSearchNews').submit();
+    $('#formSearchPost').submit();
 });

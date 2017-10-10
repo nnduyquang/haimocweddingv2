@@ -54,10 +54,13 @@ class QuotationController extends Controller
         }
         $image = $request->input('image');
         $image = substr($image, strpos($image, 'images'), strlen($image) - 1);
+        $image_cover=$request->input('image_cover');
+        $image_cover = substr($image_cover, strpos($image_cover, 'images'), strlen($image_cover) - 1);
         $quotation->name = $name;
         $quotation->path = chuyen_chuoi_thanh_path($name);
         $quotation->content = $content;
         $quotation->image = $image;
+        $quotation->image_cover=$image_cover;
         $quotation->type=0;
         $quotation->save();
         return redirect()->route('quotation.index')
@@ -113,10 +116,13 @@ class QuotationController extends Controller
         }
         $image = $request->input('image');
         $image = substr($image, strpos($image, 'images'), strlen($image) - 1);
+        $image_cover=$request->input('image_cover');
+        $image_cover = substr($image_cover, strpos($image_cover, 'images'), strlen($image_cover) - 1);
         $quotation->name = $name;
         $quotation->path = chuyen_chuoi_thanh_path($name);
         $quotation->content = $content;
         $quotation->image = $image;
+        $quotation->image_cover=$image_cover;
         $quotation->save();
         return redirect()->route('quotation.index')
             ->with('success', 'Cập Nhật Thành Công Báo Giá');
@@ -139,7 +145,18 @@ class QuotationController extends Controller
     {
         $keywords = preg_replace('/\s+/', ' ', $request->input('txtSearch'));
         $quotations = Quotation::where('name', 'like', '%' . $keywords . '%')->orderBy('id', 'DESC')->paginate(5);
-        return view('backend.admin.quotation.index', compact('$quotation', '$keywords'))
+        return view('backend.admin.quotation.index', compact('quotations', '$keywords'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
+    }
+    public function getAllQuotations(){
+        $quotations = Quotation::where('type','=','0')->orderBy('id', 'DESC')->get();
+        foreach ($quotations as $key=>$data){
+            $data->content=cat_chuoi_dai_thanh_ngan(bo_the_html_trong_chuoi($data->content),50);
+        }
+        return view('frontend.baogia.index', compact('quotations'));
+    }
+    public function getDetailQuotation($path){
+        $quotation = Quotation::where('path','=',$path)->first();
+        return view('frontend.baogia.chitietbaogia.index', compact('quotation'));
     }
 }

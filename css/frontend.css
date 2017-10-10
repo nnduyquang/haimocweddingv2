@@ -407,6 +407,7 @@ This class is added to the container
 
 .menu-desktop .menu-wrap .menu-right-contact {
   float: right;
+  height: 130px;
 }
 
 .menu-desktop .menu-wrap .menu-right-contact img {
@@ -416,7 +417,7 @@ This class is added to the container
 }
 
 .menu-desktop .menu-wrap .menu-right-contact-fixed img {
-  height: 73px;
+  height: 63px;
 }
 
 .menu-desktop .menu-wrap .menu-left-info {
@@ -947,6 +948,16 @@ This class is added to the container
           animation-delay: 2s;
 }
 
+#gioi-thieu img.img-top {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+#gioi-thieu .wrap-content {
+  line-height: 1.6;
+  margin-bottom: 60px;
+}
+
 #album h3.title {
   text-align: center;
   position: relative;
@@ -1343,6 +1354,11 @@ This class is added to the container
   color: white;
 }
 
+#bao-gia img.img-top {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
 #bao-gia h3.title-top-bao-gia {
   text-align: center;
   position: relative;
@@ -1396,6 +1412,11 @@ This class is added to the container
   font-style: italic;
   text-align: justify;
   padding-top: 20px;
+}
+
+#chi-tiet-bao-gia img.img-top {
+  width: 100%;
+  margin-bottom: 60px;
 }
 
 #chi-tiet-bao-gia h3.title-chitiet-baogia {

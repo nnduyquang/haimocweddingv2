@@ -16,6 +16,11 @@
   margin-right: 3px;
 }
 
+.showHinhPost {
+  max-width: 100%;
+  max-height: 80%;
+}
+
 img.showHinh1, img.showHinh2, img.showHinh3, img.showDDCover, img.showDDAvata, img.showDDBackground {
   width: 100%;
 }
@@ -33,7 +38,7 @@ img.img-choose {
   height: 160px;
 }
 
-img.showHinhQuotation {
+img.showHinhQuotation, img.showHinhQuotationCover {
   width: 100%;
 }
 

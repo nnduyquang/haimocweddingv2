@@ -19,3 +19,10 @@ if ($('#btnBrowseQuotations').length) {
         selectFileWithCKFinder('pathQuotation','showHinhQuotation');
     }
 }
+if ($('#btnBrowseQuotationsCover').length) {
+    var button1 = document.getElementById('btnBrowseQuotationsCover');
+
+    button1.onclick = function () {
+        selectFileWithCKFinder('pathQuotationCover','showHinhQuotationCover');
+    }
+}
