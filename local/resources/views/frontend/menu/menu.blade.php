@@ -6,7 +6,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="menu-right-contact">
-                                {{ Html::image('images/temps/img-contact.jpg','',array('class'=>'')) }}
+                                <a href="{{URL::to('lien-he')}}">
+                                    {{ Html::image('images/temps/img-contact.jpg','',array('class'=>'')) }}
+                                </a>
                             </div>
                             <div class="menu-left-info">
                                 <div class="menu-top-info">

@@ -11,25 +11,17 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('frontend.trangchu.index');
-//});
+
 Route::get('/', 'FETrangChuController@getAllInfo');
-//Route::get('/album', function () {
-//    return view('frontend.album.index');
-//});
 Route::get('/gioi-thieu', 'PostController@getContentGioiThieu');
 Route::get('/album/{pathCategory}', 'FEAlbumController@getAlbumsByCategory');
-//Route::get('/dia-diem', function () {
-//    return view('frontend.location.index');
-//});
 Route::get('/dia-diem/{pathLocation}', 'FELocationController@getLocationInfo');
 Route::get('/bao-gia', 'QuotationController@getAllQuotations');
 Route::get('/bao-gia/{path}', 'QuotationController@getDetailQuotation');
-//Route::get('/album/chi-tiet', function () {
-//    return view('frontend.album.chitietalbum.index');
-//});
 Route::get('album/{pathCategoryAlbum}/{pathAlbum}', 'FEAlbumController@getDetail');
+Route::get('lien-he',function (){
+    return view('frontend.trangcon.lienhe');
+});
 Route::get('/sml_login', function () {
     return view('backend.login.login1');
 });

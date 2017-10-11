@@ -83,6 +83,9 @@ $(document).ready(function () {
             $('.menu-right-contact').removeClass('menu-right-contact-fixed');
         }
     });
+    $('.datepicker').datepicker({
+        format: 'dd/mm/yyyy',
+    });
 //     var $grid = $('.grid-haha').masonry({
 //         itemSelector: '.grid-item',
 //         percentPosition: true,
