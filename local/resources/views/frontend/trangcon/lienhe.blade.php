@@ -11,7 +11,7 @@
 @section('container')
     <div id="lien-he" class="col-md-12">
         <div class="row">
-            <h3>Liên Hệ</h3>
+            <h3 class="title">Liên Hệ</h3>
             <div id="map" class="col-md-12">
                 <div class="row">
                     <iframe
@@ -25,29 +25,50 @@
             </div>
             <div id="contact" class="col-md-6">
                 <div class="row">
-                    <div class="container">
-                        <div class="row">
-                            <form>
-                                <div class="form-group">
-                                    <label for="email">Tên Cô Dâu Hoặc Chú Rể:</label>
-                                    <input  class="form-control" id="email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="pwd">Email:</label>
-                                    <input  class="form-control" id="pwd">
-                                </div>
-                                <div class="form-group">
-                                    <label for="pwd">Chọn Ngày Dự Kiến Chụp</label>
-                                    <input class="datepicker" data-date-format="dd/mm/yyyy">
-                                </div>
-                                <div class="form-group">
-                                    <label for="pwd">Yêu Cầu Báo Giá:</label>
-                                    <textarea class="form-control" rows="5" id="comment"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-default">Submit</button>
-                            </form>
+                    <form>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="email">Tên Cô Dâu Hoặc Chú Rể:</label>
+                                <input class="form-control" id="email">
+                            </div>
                         </div>
-                    </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="pwd">Email:</label>
+                                <input class="form-control" id="pwd">
+                            </div>
+                        </div>
+                        <div class="col-md-5 ">
+                            <div class="form-group">
+                                <label for="pwd">Chọn Ngày Dự Kiến Chụp</label>
+                                <div class="input-group date">
+                                    <input type="text" class="form-control datepicker">
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="pwd">Yêu Cầu Báo Giá:</label>
+                                <textarea class="form-control" rows="5" id="comment"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="text-align: center;">
+                            <button type="submit"  class="btn btn-default">Đặt Lịch</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6 lien-he-info">
+                <div class="row">
+                    <h3 class="name">Hải Mộc Wedding</h3>
+                    <p>Địa chỉ: 38 Tôn Thất Đạm, Thanh Khê, Đà Nẵng</p>
+                    <p>Hotline: 0919.567.177 - 0902.710.212</p>
+                    <p>Email: <a href="mailto:haimocwedding@gmail.com ">haimocwedding@gmail.com </a></p>
+                    <p>Website: <a href="http://www.haimocwedding.com">www.haimocwedding.com</a></p>
+                    <p>Giờ Mở Cửa: 8h30 - 21h</p>
                 </div>
             </div>
         </div>

@@ -23,11 +23,13 @@ mix.styles([
         'bower_components/nivo-slider/jquery.nivo.slider.pack.js',
         'bower_components/fancybox/dist/jquery.fancybox.min.js',
         'bower_components/imagesloaded/imagesloaded.pkgd.min.js',
-        'bower_components/masonry/dist/masonry.pkgd.min.js'
+        'bower_components/masonry/dist/masonry.pkgd.min.js',
+        'bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'
     ], '../js/core.frontend.js')
     .styles([
         'bower_components/nivo-slider/nivo-slider.css',
         'bower_components/fancybox/dist/jquery.fancybox.min.css',
+        'bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'
 
     ], '../css/core.frontend.css')
     .sass('resources/assets/sass/frontend.scss', '../../css/frontend.css').options({processCssUrls: false})

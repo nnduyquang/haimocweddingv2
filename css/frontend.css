@@ -1432,6 +1432,42 @@ This class is added to the container
   width: 100%;
 }
 
+#lien-he h3.title {
+  text-align: center;
+  position: relative;
+  font-size: 39px;
+  color: #00999f;
+  padding-bottom: 60px;
+}
+
+#lien-he h3.title:after {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  display: block;
+  width: 60px;
+  height: 1px;
+  margin-left: -30px;
+  background-color: #c8c8c8;
+  content: ' ';
+}
+
+#lien-he #map {
+  margin-bottom: 30px;
+}
+
+#lien-he #contact {
+  margin-bottom: 30px;
+}
+
+#lien-he .lien-he-info {
+  line-height: 1.6;
+}
+
+#lien-he .lien-he-info p {
+  font-size: 20px;
+}
+
 body {
   background-color: white;
 }

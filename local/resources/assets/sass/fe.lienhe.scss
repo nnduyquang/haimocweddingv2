@@ -1,0 +1,32 @@
+#lien-he {
+  h3.title {
+    text-align: center;
+    position: relative;
+    font-size: 39px;
+    color: $main-a-hover;
+    padding-bottom: 60px;
+  }
+  h3.title:after {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    display: block;
+    width: 60px;
+    height: 1px;
+    margin-left: -30px;
+    background-color: #c8c8c8;
+    content: ' ';
+  }
+  #map {
+    margin-bottom: 30px;
+  }
+  #contact {
+    margin-bottom: 30px;
+  }
+  .lien-he-info {
+    line-height: 1.6;
+    p{
+      font-size: 20px;
+    }
+  }
+}
