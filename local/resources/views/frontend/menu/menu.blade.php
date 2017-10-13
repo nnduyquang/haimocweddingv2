@@ -21,7 +21,7 @@
                                 <div class="menu-bottom-info">
                                     <div class="row">
                                         <ul class="menu-boottom-info-left">
-                                            <li><a href="{{URL::to('gioi-thieu')}}">Giới Thiệu</a></li>
+                                            <li class="li-normal"><a href="{{URL::to('gioi-thieu')}}">Giới Thiệu</a></li>
                                             <li class="has-item-down"><a href="#">Album</a>
                                                 <ul>
                                                     <li><a href="{{URL::to('album/album-ngoai-canh')}}">Album Ngoại
@@ -33,12 +33,12 @@
                                                             Đình - Em Bé</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="">Áo Cưới</a></li>
+                                            <li class="li-normal"><a href="">Áo Cưới</a></li>
                                         </ul>
                                         <ul class="menu-boottom-info-right">
-                                            <li><a href="{{URL::to('bao-gia')}}">Bảng Giá</a></li>
-                                            <li><a href="">Khuyến Mãi</a></li>
-                                            <li><a href="">Tin Tức</a></li>
+                                            <li class="li-normal"><a href="{{URL::to('bao-gia')}}">Bảng Giá</a></li>
+                                            <li class="li-normal"><a href="">Khuyến Mãi</a></li>
+                                            <li class="li-normal"><a href="">Tin Tức</a></li>
                                         </ul>
                                     </div>
                                 </div>

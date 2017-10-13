@@ -479,28 +479,86 @@ This class is added to the container
   color: #00999F;
 }
 
-.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li.has-item-down:hover ul, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li.has-item-down:hover ul {
-  display: block;
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li.li-normal a, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li.li-normal a {
+  position: relative;
 }
 
-.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left ul, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right ul {
-  display: none;
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li.li-normal a:after, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li.li-normal a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  width: 0%;
+  height: 1px;
+  margin: auto;
+  background-color: transparent;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li.li-normal:hover a, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li.li-normal:hover a {
+  color: #ff6d00;
+}
+
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li.li-normal:hover a:after, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li.li-normal:hover a:after {
+  background-color: #ff6d00;
+  width: 100%;
+}
+
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li.has-item-down, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li.has-item-down {
+  padding: 0px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li.has-item-down:hover, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li.has-item-down:hover {
+  background-color: #00999F;
+  padding: 10px;
+}
+
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li.has-item-down:hover > a, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li.has-item-down:hover > a {
+  color: white;
+}
+
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li.has-item-down:hover ul, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li.has-item-down:hover ul {
+  background-color: #00999F;
+  padding-top: 10px;
+  opacity: 1;
+}
+
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li.has-item-down ul, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li.has-item-down ul {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  opacity: 0;
   position: absolute;
   top: 100%;
-  left: -47px;
-  background: #fff;
-  padding: 0;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 15px;
+  left: 0px;
+  padding: 25px 0 10px 10px;
   z-index: 9;
-  width: 200px;
+  white-space: nowrap;
 }
 
-.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left ul li, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right ul li {
-  float: none;
-  width: 200px;
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li.has-item-down ul li, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li.has-item-down ul li {
   line-height: 1.6;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.27);
+}
+
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li.has-item-down ul li a, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li.has-item-down ul li a {
+  color: white;
+  line-height: 33px;
+}
+
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li.has-item-down ul li:hover, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li.has-item-down ul li:hover {
+  background-color: white;
+  padding-left: 10px;
+}
+
+.menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-left li.has-item-down ul li:hover a, .menu-desktop .menu-wrap .menu-left-info .menu-bottom-info ul.menu-boottom-info-right li.has-item-down ul li:hover a {
+  color: #333333;
 }
 
 .wrap-fixed-top {
@@ -1458,6 +1516,27 @@ This class is added to the container
 
 #lien-he #contact {
   margin-bottom: 30px;
+}
+
+#lien-he #contact .lh-input {
+  border: none;
+  border-bottom: solid 1px #C8C8C8;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0px;
+}
+
+#lien-he #contact .lh-datepick {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+  display: table-cell;
 }
 
 #lien-he .lien-he-info {

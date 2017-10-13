@@ -22,6 +22,24 @@
   }
   #contact {
     margin-bottom: 30px;
+    .lh-input{
+      border:none;
+      border-bottom: solid 1px #C8C8C8;
+      box-shadow: none;
+      border-radius: 0px;
+    }
+    .lh-datepick{
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+      width: 1%;
+      white-space: nowrap;
+      vertical-align: middle;
+      display: table-cell;
+    }
   }
   .lien-he-info {
     line-height: 1.6;

@@ -29,22 +29,22 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="email">Tên Cô Dâu Hoặc Chú Rể:</label>
-                                <input class="form-control" id="email">
+                                <input class="form-control lh-input" id="">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="pwd">Email:</label>
-                                <input class="form-control" id="pwd">
+                                <input class="form-control lh-input" id="">
                             </div>
                         </div>
                         <div class="col-md-5 ">
                             <div class="form-group">
                                 <label for="pwd">Chọn Ngày Dự Kiến Chụp</label>
                                 <div class="input-group date">
-                                    <input type="text" class="form-control datepicker">
-                                    <div class="input-group-addon">
-                                        <span class="glyphicon glyphicon-th"></span>
+                                    <input type="text" class="form-control datepicker lh-input">
+                                    <div class="lh-datepick">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="pwd">Yêu Cầu Báo Giá:</label>
-                                <textarea class="form-control" rows="5" id="comment"></textarea>
+                                <textarea class="form-control lh-input" rows="5" id="comment"></textarea>
                             </div>
                         </div>
                         <div class="col-md-12" style="text-align: center;">
