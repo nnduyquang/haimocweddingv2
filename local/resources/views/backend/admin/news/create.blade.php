@@ -55,10 +55,16 @@
                 {{ Html::image('','',array('id'=>'showHinhDaiDien','class'=>'showHinh'))}}
             </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-4">
             <div class="form-group">
                 <strong>Tình Trạng:</strong>
                 <input name="news_is_post" data-on="Đăng" data-off="Không Đăng" type="checkbox"  data-toggle="toggle">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <strong>Tiêu điểm:</strong>
+                <input name="news_is_focus" data-on="Tiêu Điểm" data-off="Không" type="checkbox"  data-toggle="toggle">
             </div>
         </div>
 

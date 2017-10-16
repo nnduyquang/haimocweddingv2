@@ -5,10 +5,10 @@
                 <div class="col-md-6 s4-info">
                     <div class="row">
                         <h3>Tưng Bừng Khuyến Mãi 2017</h3>
-                        <p>Thực hiện album cưới đẹp như mơ tại Kim Tuyến Bridal cùng nhiều chương trình khuyến
+                        <p>Thực hiện album cưới đẹp như mơ tại Hải Mộc Wedding cùng nhiều chương trình khuyến
                             mãi
                             cực hot trong năm 2017, bạn đừng để lỡ nha.</p>
-                        <a href="#">Xem Thêm</a>
+                        <a href="{{URL::to('khuyen-mai')}}">Xem Thêm</a>
                     </div>
                 </div>
                 <div class="col-md-6 s4-baloon">

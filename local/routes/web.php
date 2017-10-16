@@ -19,6 +19,7 @@ Route::get('/dia-diem/{pathLocation}', 'FELocationController@getLocationInfo');
 Route::get('/bao-gia', 'QuotationController@getAllQuotations');
 Route::get('/bao-gia/{path}', 'QuotationController@getDetailQuotation');
 Route::get('album/{pathCategoryAlbum}/{pathAlbum}', 'FEAlbumController@getDetail');
+Route::get('tin-tuc/{path}', 'FENewsController@getDetailNews');
 Route::get('lien-he',function (){
     return view('frontend.trangcon.lienhe');
 });

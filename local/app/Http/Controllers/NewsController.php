@@ -17,7 +17,7 @@ class NewsController extends Controller
      */
     public function index(Request $request)
     {
-        $news = News::where('category_post_id','=',1)->orderBy('id', 'DESC')->paginate(5);
+        $news = News::where('category_post_id','=',1)->orderBy('isFocus', 'DESC')->orderBy('id', 'DESC')->paginate(5);
         return view('backend.admin.news.index', compact('news'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
@@ -38,16 +38,22 @@ class NewsController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(NewsRequest $request)
+    public function store(Request $request)
     {
         $news = new News();
         $title = $request->input('title');
         $content = $request->input('content-news');
         $isPost = $request->input('news_is_post');
+        $isFocus = $request->input('news_is_focus');
         if ($isPost) {
             $news->isPost = 1;
         } else {
             $news->isPost = 0;
+        }
+        if ($isFocus) {
+            $news->isFocus = 1;
+        } else {
+            $news->isFocus = 0;
         }
         $image = $request->input('image');
         $image = substr($image, strpos($image, 'images'), strlen($image) - 1);
@@ -93,16 +99,22 @@ class NewsController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(NewsRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $news = News::find($id);
         $title = $request->input('title');
         $content = $request->input('content-news');
         $isPost = $request->input('news_is_post');
+        $isFocus = $request->input('news_is_focus');
         if ($isPost) {
             $news->isPost = 1;
         } else {
             $news->isPost = 0;
+        }
+        if ($isFocus) {
+            $news->isFocus = 1;
+        } else {
+            $news->isFocus = 0;
         }
         $image = $request->input('image');
         $image = substr($image, strpos($image, 'images'), strlen($image) - 1);

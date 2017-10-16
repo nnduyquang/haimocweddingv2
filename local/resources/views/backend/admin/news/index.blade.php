@@ -55,6 +55,7 @@
             <th>Ngày Đăng</th>
             <th>Ngày Cập Nhật</th>
             <th>Tình Trạng</th>
+            <th>Tiêu Điểm</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($news as $key => $data)
@@ -64,6 +65,7 @@
             <td>{{ $data->created_at }}</td>
             <td>{{ $data->updated_at }}</td>
             <td>{{$data->isPost}}</td>
+            <td>{{$data->isFocus}}</td>
             <td>
                 @permission(('news-edit'))
                 <a class="btn btn-primary" href="{{ route('news.edit',$data->id) }}">Edit</a>
