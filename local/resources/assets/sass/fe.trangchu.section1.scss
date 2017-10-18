@@ -73,3 +73,19 @@
     }
   }
 }
+@media screen and(max-width: 768px) {
+  #section1 {
+    .top-info{
+      .one-item{
+        a{
+          p{
+            text-align: center;
+          }
+        }
+      }
+    }
+    .wrap-item{
+      margin-top: 20px;
+    }
+  }
+}

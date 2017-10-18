@@ -134,3 +134,12 @@
     }
   }
 }
+@media screen and(max-width: 768px) {
+  #section2{
+    .list-album{
+      .one-item{
+        padding-left: 0;
+      }
+    }
+  }
+}

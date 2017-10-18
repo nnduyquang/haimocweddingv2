@@ -34,7 +34,7 @@
                 {!! Form::text('name', null, array('placeholder' => 'Tiêu Đề','class' => 'form-control')) !!}
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="form-group">
                 <strong>
                     Ảnh Cover</strong>
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="form-group">
                 <strong>
                     Ảnh Avatar</strong>
@@ -60,7 +60,20 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
+            <div class="form-group">
+                <strong>
+                    Ảnh Mini Mobile</strong>
+                <div class="form-inline">
+                    {!! Form::text('image-mobile', null, array('placeholder' => '','class' => 'form-control','id'=>'pathImageMobile')) !!}
+                    {!! Form::button('Browses', array('id' => 'btnBrowseMini','class'=>'btn btn-primary')) !!}
+                </div>
+                <div class="form-group">
+                    {{ Html::image('','',array('id'=>'showDDMini','class'=>'showDDMini'))}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
             <div class="form-group">
                 <strong>
                     Ảnh Background</strong>

@@ -90,6 +90,13 @@ if ($('#btnBrowseAvata').length) {
         selectFileWithCKFinder('pathAvata','showDDAvata');
     }
 }
+if ($('#btnBrowseMini').length) {
+    var button1 = document.getElementById('btnBrowseMini');
+
+    button1.onclick = function () {
+        selectFileWithCKFinder('pathImageMobile','showDDMini');
+    }
+}
 if ($('#btnBrowseBackground').length) {
     var button1 = document.getElementById('btnBrowseBackground');
 

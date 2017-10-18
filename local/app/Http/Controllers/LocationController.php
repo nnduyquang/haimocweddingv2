@@ -46,6 +46,8 @@ class LocationController extends Controller
         $imageAvata = $request->input('image-avata');
         $imageAvata= substr($imageAvata, strpos($imageAvata, 'images'), strlen($imageAvata) - 1);
         $imagBackground = $request->input('image-background');
+        $imageMobile = $request->input('image-mobile');
+        $imageMobile= substr($imageMobile, strpos($imageMobile, 'images'), strlen($imageMobile) - 1);
         $imagBackground= substr($imagBackground, strpos($imagBackground, 'images'), strlen($imagBackground) - 1);
         $imageMota1 = $request->input('image_mota_1');
         $imageMota1= substr($imageMota1, strpos($imageMota1, 'images'), strlen($imageMota1) - 1);
@@ -76,6 +78,7 @@ class LocationController extends Controller
         $location->path = $path;
         $location->image_cover = $imageCover;
         $location->image_avata = $imageAvata;
+        $location->image_mobile = $imageMobile;
         $location->image_background = $imagBackground;
         $location->image_mota_1 = $imageMota1;
         $location->title_mota_1 = $titleMota1;
@@ -131,6 +134,8 @@ class LocationController extends Controller
         $imageCover= substr($imageCover, strpos($imageCover, 'images'), strlen($imageCover) - 1);
         $imageAvata = $request->input('image-avata');
         $imageAvata= substr($imageAvata, strpos($imageAvata, 'images'), strlen($imageAvata) - 1);
+        $imageMobile = $request->input('image-mobile');
+        $imageMobile= substr($imageMobile, strpos($imageMobile, 'images'), strlen($imageMobile) - 1);
         $imagBackground = $request->input('image-background');
         $imagBackground= substr($imagBackground, strpos($imagBackground, 'images'), strlen($imagBackground) - 1);
         $imageMota1 = $request->input('image_mota_1');
@@ -162,6 +167,7 @@ class LocationController extends Controller
         $location->path = $path;
         $location->image_cover = $imageCover;
         $location->image_avata = $imageAvata;
+        $location->image_mobile = $imageMobile;
         $location->image_background = $imagBackground;
         $location->image_mota_1 = $imageMota1;
         $location->title_mota_1 = $titleMota1;

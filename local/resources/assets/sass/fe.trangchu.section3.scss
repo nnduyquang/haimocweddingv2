@@ -37,6 +37,9 @@
       }
     }
   }
+  img.img-mobile{
+    width: 100%;
+  }
   .s3-wrap-img{
     img{
       position: absolute;
@@ -51,5 +54,18 @@
       opacity: 1;
     }
 
+  }
+}
+@media screen and(max-width: 768px) {
+  #section3{
+    height: 100%;
+    ul{
+      background: none;
+      padding: 0;
+      li{
+        padding: 0;
+        border: hidden;
+      }
+    }
   }
 }
