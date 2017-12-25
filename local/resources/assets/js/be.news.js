@@ -9,8 +9,7 @@ if ($('#content-news').length) {
         filebrowserUploadUrl: '../../js/kcfinder/upload.php?type=files',
         filebrowserImageUploadUrl: '../../js/kcfinder/upload.php?type=images',
         filebrowserFlashUploadUrl: '../../js/kcfinder/upload.php?type=flash'
-    })
-    ;
+    });
 }
 if ($('#btnBrowse').length) {
     var button1 = document.getElementById('btnBrowse');
